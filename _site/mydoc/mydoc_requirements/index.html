@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Version 5.0 of the Documentation theme for Jekyll changes some fundamental ways the theme works to provide product-specific sidebars, intended to accommodate...">
-<meta name="keywords" content="getting_started,  release notes, announcements, what's new, new features">
-<title>Release notes 5.0  | Manual</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Requirements  | Manual</title>
 <link rel="stylesheet" href="/CSHL_RNAseq/css/syntax.css">
 
 
@@ -160,7 +160,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Manual feedback";
-var body = "I have some feedback about the Release notes 5.0 page: ";
+var body = "I have some feedback about the Requirements page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:thomas.girke@ucr.edu?subject=";
@@ -187,7 +187,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CSHL_RNAseq/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Release notes 5.0">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Requirements">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -241,7 +241,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_requirements/">Requirements</a></li>
+            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_requirements/">Requirements</a></li>
             
             
             
@@ -349,15 +349,13 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Release notes 5.0</h1>
+   <h1 class="post-title-main">Requirements</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary">Version 5.0 of the Documentation theme for Jekyll changes some fundamental ways the theme works to provide product-specific sidebars, intended to accommodate a site where multiple products are grouped together on the same site rather than generated out as separate outputs.</div>
    
 
     
@@ -391,52 +389,21 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="unique-sidebars-for-each-product">Unique sidebars for each product</h2>
+  <h2 id="laptops">Laptops</h2>
 
-<p>In previous versions of the theme, I built the theme to generate different outputs for different scenarios based on various filtering attributes that might include product, version, platform, and audience variants.</p>
+<p>…</p>
 
-<p>However, this model results in siloed outputs and lots of separate file directories to manage. Instead of having 30 separate sites for your content (or however many variants you might have been producing), in this version of the theme I’ve moved towards a strategy of having one site with multiple products.</p>
+<h2 id="r-and-rstudio">R and RStudio</h2>
 
-<p>For each product, you can associate a unique sidebar with each of the product’s pages. This allows you to have all your documentation on one site, but with separate navigation that is tailored to a view of that product.</p>
+<p>…</p>
 
-<p>You can still output to both web and PDF. And if you really need multiple site outputs, you can still do so by using multiple configuration files that trigger different builds. But my conclusion after using the multiple site output model for some years is that it’s a bad practice for tech comm.</p>
+<h2 id="packages">Packages</h2>
 
-<h2 id="permalinks">Permalinks</h2>
+<p>…</p>
 
-<p>With this theme, since you’ll be publishing to one site, I’ve implement permalinks instead of relative links. Using permalinks means the way you store pages is much more flexible. You can store topics in folders and subfolders, etc., to any degree. But note that with permalinks you can’t view the content offline (outside of Jekyll’s preview server) nor on a separate site other than the one specified in the configuration file. Permalinks are how Jekyll was designed to work, and the sites just work better that way.</p>
-
-<h2 id="kramdown-and-rouge">Kramdown and Rouge</h2>
-
-<p>I also switched from redcarpet and Pygments to Kramdown and Rouge to align with the current direction of Jekyll 3.0. Kramdown is a Markdown filter (it’s slightly different from Github-flavored Markdown). Rouge is a syntax highlighter. Pygments had some dependencies on Python, which made it more cumbersome for Windows users.</p>
-
-<h2 id="blog-feature">Blog feature</h2>
-
-<p>I included a blog feature with this version of the theme. You can write posts and view them through the News link. There’s also an archive for blog posts that sorts posts by year.</p>
-
-<p>Additionally, the tagging system works across both the blog and pages, so your tags allow users to move laterally across the site based on topics they’re interested in. When you view a tag archive, the sidebar shows a list of tags.</p>
-
-<h2 id="updated-documentation">Updated documentation</h2>
-
-<p>I updated the documentation for  the theme. The switch from the multi-site outputs to the single-site with multiple sidebars required updating a lot of different parts of the documentation and code.</p>
-
-<h2 id="fixed-errors">Fixed errors</h2>
-
-<p>Previously I had some errors with the HTML that showed up in w3c HTML validator analyses. This caused some small problems in certain browsers or systems less tolerant of the errors. I fixed all of the errors.</p>
-
-<h2 id="accessing-the-old-theme">Accessing the old theme</h2>
-
-<p>If you want to access the old theme, you can still find it <a href="https://github.com/tomjohnson1492/jekylldoctheme-separate-outputs">here</a>.</p>
 
 
 <div class="tags">
-    
-    <b>Tags: </b>
-    
-    
-    
-    <a href="/CSHL_RNAseq/tag_getting_started" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
-    
-    
     
 </div>
 
@@ -450,7 +417,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jul 1, 2016 <br />
+<p>Page last updated:</span> Fri Jul  1 16:14:54 2016<br/> Site last generated: Jul 1, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->
