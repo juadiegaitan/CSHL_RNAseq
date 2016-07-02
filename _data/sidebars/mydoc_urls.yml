@@ -632,9 +632,9 @@ mydoc_systemPipeRNAseq_08:
   link: "<a href='../mydoc/mydoc_systemPipeRNAseq_08.html'>Clustering and heat maps</a>"
 
 mydoc_systemPipeRNAseq_09:
-  title: "Version Information"
+  title: "Render report in HTML and PDF format"
   url: "../mydoc/mydoc_systemPipeRNAseq_09.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_09.html'>Version Information</a>"
+  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_09.html'>Render report in HTML and PDF format</a>"
 
 mydoc_systemPipeRNAseq_10:
   title: "Funding"

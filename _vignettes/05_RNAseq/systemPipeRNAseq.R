@@ -7,9 +7,8 @@ knitr::opts_chunk$set(
 
 ## ----genRna_workflow, eval=FALSE-----------------------------------------
 ## library(systemPipeRdata)
-## genWorkenvir(workflow="rnaseq")
+## genWorkenvir(workflow="rnaseq", bam=TRUE)
 ## setwd("rnaseq")
-## download.file("https://raw.githubusercontent.com/tgirke/GEN242/master/vignettes/11_RNAseqWorkflow/systemPipeRNAseq.Rmd", "systemPipeRNAseq.Rmd")
 
 ## ----load_systempiper, eval=TRUE-----------------------------------------
 library(systemPipeR)
@@ -36,16 +35,24 @@ targets
 ## dev.off()
 
 ## ----tophat_alignment1, eval=FALSE---------------------------------------
-## args <- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
+## args <- systemArgs(sysma="param/tophat.param", mytargets="targets_trim.txt")
 ## sysargs(args)[1] # Command-line parameters for first FASTQ file
 
-## ----tophat_alignment2, eval=FALSE---------------------------------------
+## ----tophat_alignment2, eval=FALSE, warning=FALSE, message=FALSE---------
 ## moduleload(modules(args))
 ## system("bowtie2-build ./data/tair10.fasta ./data/tair10.fasta")
 ## resources <- list(walltime="20:00:00", nodes=paste0("1:ppn=", cores(args)), memory="10gb")
 ## reg <- clusterRun(args, conffile=".BatchJobs.R", template="torque.tmpl", Njobs=18, runid="01",
 ##                   resourceList=resources)
 ## waitForJobs(reg)
+
+## ----hisat2_alignment, eval=FALSE----------------------------------------
+## args <- systemArgs(sysma="param/hisat2.param", mytargets="targets.txt")
+## # args <- systemArgs(sysma="param/hisat2.param", mytargets="targets_trim.txt")
+## sysargs(args)[1] # Command-line parameters for first FASTQ file
+## moduleload(modules(args))
+## system("hisat2-build ./data/tair10.fasta ./data/tair10.fasta")
+## runCommandline(args=args)
 
 ## ----check_files_exist, eval=FALSE---------------------------------------
 ## file.exists(outpaths(args))
@@ -174,6 +181,13 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## pdf("heatmap1.pdf")
 ## pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
 ## dev.off()
+
+## ----render_report, eval=FALSE-------------------------------------------
+## rmarkdown::render("systemPipeRNAseq.Rmd", "html_document")
+## rmarkdown::render("systemPipeRNAseq.Rmd", "pdf_document")
+## 
+## # Version Information
+## 
 
 ## ----sessionInfo---------------------------------------------------------
 sessionInfo()

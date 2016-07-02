@@ -13,11 +13,4 @@ Biobase
 SummarizedExperiment
 GenomicAlignments
 ShortRead
-DBI
-RSQLite
 systemPipeR
-ggplot2
-ape
-Rcpp
-RcppArmadillo
-DESeq2

@@ -1,24 +1,22 @@
 ---
 title: Alignments
 keywords: 
-last_updated: Sat Jul  2 14:28:43 2016
+last_updated: Sat Jul  2 16:20:43 2016
 ---
 
-## Read mapping with `Bowtie2/Tophat2` 
-
-The NGS reads of this project will be aligned against the reference
-genome sequence using `Bowtie2/TopHat2` (Kim et al., 2013; Langmead et al., 2012). The parameter 
-settings of the aligner are defined in the `tophat.param` file.
+## Read mapping with `Bowtie2/Tophat2`
+The NGS reads of this project will be aligned against the reference genome
+sequence using `Bowtie2/TopHat2` (Kim et al., 2013; Langmead et al., 2012). The
+parameter settings of the aligner are defined in the `tophat.param`
+file.
 
 
 {% highlight r %}
-args <- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
+args <- systemArgs(sysma="param/tophat.param", mytargets="targets_trim.txt")
 sysargs(args)[1] # Command-line parameters for first FASTQ file
 {% endhighlight %}
 
-
-Submission of alignment jobs to compute cluster, here using 72 CPU cores
-(18 `qsub` processes each with 4 CPU cores).
+Submission of alignment jobs to compute cluster, here using 72 CPU cores (18 `qsub` processes each with 4 CPU cores).
 
 
 {% highlight r %}
@@ -28,6 +26,18 @@ resources <- list(walltime="20:00:00", nodes=paste0("1:ppn=", cores(args)), memo
 reg <- clusterRun(args, conffile=".BatchJobs.R", template="torque.tmpl", Njobs=18, runid="01", 
                   resourceList=resources)
 waitForJobs(reg)
+{% endhighlight %}
+
+## Read mapping with `HISAT2`
+
+
+{% highlight r %}
+args <- systemArgs(sysma="param/hisat2.param", mytargets="targets.txt")
+# args <- systemArgs(sysma="param/hisat2.param", mytargets="targets_trim.txt")
+sysargs(args)[1] # Command-line parameters for first FASTQ file
+moduleload(modules(args))
+system("hisat2-build ./data/tair10.fasta ./data/tair10.fasta")
+runCommandline(args=args)
 {% endhighlight %}
 
 Check whether all BAM files have been created

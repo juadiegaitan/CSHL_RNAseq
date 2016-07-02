@@ -1,9 +1,16 @@
 ---
-title: Version Information
+title: Render report in HTML and PDF format
 keywords: 
-last_updated: Sat Jul  2 14:28:43 2016
+last_updated: Sat Jul  2 16:20:43 2016
 ---
 
+
+{% highlight r %}
+rmarkdown::render("systemPipeRNAseq.Rmd", "html_document")
+rmarkdown::render("systemPipeRNAseq.Rmd", "pdf_document")
+
+# Version Information
+{% endhighlight %}
 
 {% highlight r %}
 sessionInfo()

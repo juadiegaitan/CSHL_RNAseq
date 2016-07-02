@@ -414,7 +414,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Introduction</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Background</a></li>
             
             
             
@@ -428,14 +428,14 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. Workflow overview</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. More detail</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow templates</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow demo</a></li>
             
             
             
@@ -520,7 +520,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Version Information</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
             
             
             
@@ -599,7 +599,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="installation">Installation</h2>
 
-<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code class="highlighter-rouge">systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code class="highlighter-rouge">systemPipeR</code></em> environment can be installed from R using the <em><code class="highlighter-rouge">biocLite</code></em> install command. The associated data package <a href="https://github.com/tgirke/systemPipeRdata"><em><code class="highlighter-rouge">systemPipeRdata</code></em></a> can be used to generate <em><code class="highlighter-rouge">systemPipeR</code></em> workflow environments with a single command (<a href="#load-sample-data-and-workflow-templates">see below</a>) containing all parameter files and sample data required to quickly test and run workflows.</p>
+<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code class="highlighter-rouge">systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code class="highlighter-rouge">systemPipeR</code></em> environment can be installed from the R console using the <em><code class="highlighter-rouge">biocLite</code></em> install command. The associated data package <a href="https://github.com/tgirke/systemPipeRdata"><em><code class="highlighter-rouge">systemPipeRdata</code></em></a> can be installed the same way. The latter is a helper package for generating <em><code class="highlighter-rouge">systemPipeR</code></em> workflow environments with a single command containing all parameter files and sample data required to quickly test and run workflows.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script 
 </span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Installs systemPipeR 
@@ -614,16 +614,16 @@ $('#toc').on('click', 'a', function() {
 <h2 id="load-sample-data-and-workflow-templates">Load sample data and workflow templates</h2>
 <p>The mini sample FASTQ files used by this overview vignette as well as the associated workflow reporting vignettes can be loaded via the <em><code class="highlighter-rouge">systemPipeRdata</code></em> package as shown below. The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code class="highlighter-rouge">SRP010938</code></a> contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em> (Howard et al., 2013). To minimize processing time during testing, each FASTQ file has been subsetted to 90,000-100,000 randomly sampled PE reads that map to the first 100,000 nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding reference genome sequence (FASTA) and its GFF annotion files (provided in the same download) have been truncated accordingly. This way the entire test sample data set requires less than 200MB disk storage space. A PE read set has been chosen for this test data set for flexibility, because it can be used for testing both types of analysis routines requiring either SE (single end) reads or PE reads.</p>
 
-<p>The following loads one of the available NGS workflow templates (here RNA-Seq) into the user’s current working directory. At the moment, the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq. Templates for additional NGS applications will be provided in the future.</p>
+<p>The following generates a fully populated <em><code class="highlighter-rouge">systemPipeR</code></em> workflow environment (here for RNA-Seq) in the current working directory of an R session. At this time the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq. Templates for additional NGS applications will be provided in the future.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
-<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span></code></pre></figure>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"riboseq"</span><span class="p">,</span> <span class="n">bam</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"riboseq"</span><span class="p">)</span></code></pre></figure>
 
-<p>The working environment of the sample data loaded in previous step contains the following preconfigured directory structure:</p>
+<p>The working environment of the sample data loaded in the previous step contains the following preconfigured directory structure. Directory names are indicated in  <span style="color:grey"><em><strong>grey</strong></em></span>. Users can change this structure as needed, but need to adjust the code in their workflows accordingly.</p>
 
 <ul>
-  <li><span style="color:grey"><em><strong>workflow/</strong></em></span>
+  <li><span style="color:grey"><em><strong>workflow/</strong></em></span> (<em>e.g.</em> <em>rnaseq/</em>)
     <ul>
       <li>This is the directory of the R session running the workflow.</li>
       <li>Run script ( <em>*.Rnw</em> or <em>*.Rmd</em>) and sample annotation (<em>targets.txt</em>) files are located here.</li>
@@ -656,9 +656,6 @@ $('#toc').on('click', 'a', function() {
     </ul>
   </li>
 </ul>
-
-<p>The sample workflows provided by the package are based on the above directory structure, where directory names are indicated in  <span style="color:grey"><em><strong>grey</strong></em></span>. 
-Users can change this structure as needed, but need to adjust the code in their workflows accordingly.</p>
 
 <p>The following parameter files are included in each workflow template:</p>
 
@@ -742,40 +739,43 @@ Note, these header lines are optional. They are mainly useful for controlling co
 <h2 id="structure-of-param-file-and-sysargs-container">Structure of <em><code class="highlighter-rouge">param</code></em> file and <em><code class="highlighter-rouge">SYSargs</code></em> container</h2>
 <p>The <em><code class="highlighter-rouge">param</code></em> file defines the parameters of a chosen command-line software. The following shows the format of a sample <em><code class="highlighter-rouge">param</code></em> file provided by this package.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">parampath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
-<span class="n">read.delim</span><span class="p">(</span><span class="n">parampath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">parampath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##      PairSet         Name                                  Value
-## 1    modules         &lt;NA&gt;                          bowtie2/2.2.5
-## 2    modules         &lt;NA&gt;                          tophat/2.0.14
-## 3   software         &lt;NA&gt;                                 tophat
-## 4      cores           -p                                      4
-## 5      other         &lt;NA&gt; -g 1 --segment-length 25 -i 30 -I 3000
-## 6   outfile1           -o                            &lt;FileName1&gt;
-## 7   outfile1         path                             ./results/
-## 8   outfile1       remove                                   &lt;NA&gt;
-## 9   outfile1       append                                .tophat
-## 10  outfile1 outextension              .tophat/accepted_hits.bam
-## 11 reference         &lt;NA&gt;                    ./data/tair10.fasta
-## 12   infile1         &lt;NA&gt;                            &lt;FileName1&gt;
-## 13   infile1         path                                   &lt;NA&gt;
-## 14   infile2         &lt;NA&gt;                            &lt;FileName2&gt;
-## 15   infile2         path                                   &lt;NA&gt;</code></pre></figure>
-
-<p>The <em><code class="highlighter-rouge">systemArgs</code></em> function imports the definitions of both the <em><code class="highlighter-rouge">param</code></em> file and the <em><code class="highlighter-rouge">targets</code></em> file, and stores all relevant information in a <em><code class="highlighter-rouge">SYSargs</code></em> S4 class object. To run the pipeline without command-line software, one can assign <em><code class="highlighter-rouge">NULL</code></em> to <em><code class="highlighter-rouge">sysma</code></em> instead of a <em><code class="highlighter-rouge">param</code></em> file. In addition, one can start the <em><code class="highlighter-rouge">systemPipeR</code></em> workflow with pre-generated BAM files by providing a targets file where the <em><code class="highlighter-rouge">FileName</code></em> column gives the paths to the BAM files and <em><code class="highlighter-rouge">sysma</code></em> is assigned <em><code class="highlighter-rouge">NULL</code></em>.</p>
+<p>The <em><code class="highlighter-rouge">systemArgs</code></em> function imports the definitions of both the <em><code class="highlighter-rouge">param</code></em> file
+and the <em><code class="highlighter-rouge">targets</code></em> file, and stores all relevant information in a <em><code class="highlighter-rouge">SYSargs</code></em>
+object (S4 class). To run the pipeline without command-line software, one can
+assign <em><code class="highlighter-rouge">NULL</code></em> to <em><code class="highlighter-rouge">sysma</code></em> instead of a <em><code class="highlighter-rouge">param</code></em> file. In addition, one can
+start <em><code class="highlighter-rouge">systemPipeR</code></em> workflows with pre-generated BAM files by providing a
+targets file where the <em><code class="highlighter-rouge">FileName</code></em> column provides the paths to the BAM files.
+Note, in the following example the usage of <em><code class="highlighter-rouge">suppressWarnings()</code></em> is only relevant for 
+building this vignette. In typical workflows it should be removed.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">suppressWarnings</span><span class="p">(</span><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">))</span>
 <span class="n">args</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of 'SYSargs' for running 'tophat' on 18 samples</code></pre></figure>
 
-<p>Several accessor functions are available that are named after the slot names of the <em><code class="highlighter-rouge">SYSargs</code></em> object.</p>
+<p>Several accessor methods are available that are named after the slot names of the <em><code class="highlighter-rouge">SYSargs</code></em> object.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">names</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] "targetsin"     "targetsout"    "targetsheader" "modules"       "software"      "cores"        
 ##  [7] "other"         "reference"     "results"       "infile1"       "infile2"       "outfile1"     
 ## [13] "sysargs"       "outpaths"</code></pre></figure>
+
+<p>Of particular interest is the <em><code class="highlighter-rouge">sysargs()</code></em> method. It constructs the system
+commands for running command-lined software as specified by a given <em><code class="highlighter-rouge">param</code></em>
+file combined with the paths to the input samples (<em>e.g.</em> FASTQ files) provided
+by a <em><code class="highlighter-rouge">targets</code></em> file. The example below shows the <em><code class="highlighter-rouge">sysargs()</code></em> output for
+running TopHat2 on the first PE read sample. Evaluating the output of
+<em><code class="highlighter-rouge">sysargs()</code></em> can be very helpful for designing and debugging <em><code class="highlighter-rouge">param</code></em> files
+of new command-line software or changing the parameter settings of existing
+ones.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                                                                                                                                                                                                                        M1A 
+## "tophat -p 4 -g 1 --segment-length 25 -i 30 -I 3000 -o /home/tgirke/Dropbox/Teaching/CSHL_RNAseq/CSHL_RNAseq/_vignettes/04_Rworkflows/results/SRR446027_1.fastq.tophat /home/tgirke/Dropbox/Teaching/CSHL_RNAseq/CSHL_RNAseq/_vignettes/04_Rworkflows/data/tair10.fasta ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq"</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></figure>
 
@@ -787,13 +787,8 @@ Note, these header lines are optional. They are mainly useful for controlling co
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                                            M1A 
-## "/home/tgirke/Dropbox/Teaching/GEN242/github_course_website/GEN242/vignettes/11_Rworkflows/results/SRR446027_1.fastq.tophat/accepted_hits.bam"</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                                                                                                                                                                                                                                              M1A 
-## "tophat -p 4 -g 1 --segment-length 25 -i 30 -I 3000 -o /home/tgirke/Dropbox/Teaching/GEN242/github_course_website/GEN242/vignettes/11_Rworkflows/results/SRR446027_1.fastq.tophat /home/tgirke/Dropbox/Teaching/GEN242/github_course_website/GEN242/vignettes/11_Rworkflows/data/tair10.fasta ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq"</code></pre></figure>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                                 M1A 
+## "/home/tgirke/Dropbox/Teaching/CSHL_RNAseq/CSHL_RNAseq/_vignettes/04_Rworkflows/results/SRR446027_1.fastq.tophat/accepted_hits.bam"</code></pre></figure>
 
 <p>The content of the <em><code class="highlighter-rouge">param</code></em> file can also be returned as JSON object as follows (requires <em><code class="highlighter-rouge">rjson</code></em> package).</p>
 
@@ -817,7 +812,7 @@ Note, these header lines are optional. They are mainly useful for controlling co
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Jul  2 14:27:35 2016<br/> Site last generated: Jul 2, 2016 <br />
+<p>Page last updated:</span> Sat Jul  2 16:09:02 2016<br/> Site last generated: Jul 2, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

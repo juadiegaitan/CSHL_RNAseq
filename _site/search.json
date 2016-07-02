@@ -356,7 +356,7 @@
 
 
 {
-"title": "Version Information",
+"title": "Render report in HTML and PDF format",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/",
@@ -406,7 +406,7 @@
 
 
 {
-"title": "Workflow overview",
+"title": "More detail",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/",
@@ -416,7 +416,7 @@
 
 
 {
-"title": "Workflow templates",
+"title": "Workflow demo",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/",
@@ -440,6 +440,16 @@
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_6/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_7/",
 "summary": ""
 },
 

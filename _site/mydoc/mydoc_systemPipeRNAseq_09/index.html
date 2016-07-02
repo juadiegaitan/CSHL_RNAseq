@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Version Information  | Manual</title>
+<title>Render report in HTML and PDF format  | Manual</title>
 <link rel="stylesheet" href="/CSHL_RNAseq/css/syntax.css">
 
 
@@ -141,7 +141,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Manual feedback";
-var body = "I have some feedback about the Version Information page: ";
+var body = "I have some feedback about the Render report in HTML and PDF format page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:thomas.girke@ucr.edu?subject=";
@@ -168,7 +168,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CSHL_RNAseq/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Version Information">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Render report in HTML and PDF format">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -414,7 +414,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Introduction</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Background</a></li>
             
             
             
@@ -428,14 +428,14 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. Workflow overview</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. More detail</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow templates</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow demo</a></li>
             
             
             
@@ -520,7 +520,7 @@ window.location.href = uri;
             
             
             
-            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Version Information</a></li>
+            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
             
             
             
@@ -557,7 +557,7 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Version Information</h1>
+   <h1 class="post-title-main">Render report in HTML and PDF format</h1>
 </div>
 
 
@@ -598,6 +598,11 @@ $('#toc').on('click', 'a', function() {
     
 
   
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">rmarkdown</span><span class="o">::</span><span class="n">render</span><span class="p">(</span><span class="s2">"systemPipeRNAseq.Rmd"</span><span class="p">,</span> <span class="s2">"html_document"</span><span class="p">)</span>
+<span class="n">rmarkdown</span><span class="o">::</span><span class="n">render</span><span class="p">(</span><span class="s2">"systemPipeRNAseq.Rmd"</span><span class="p">,</span> <span class="s2">"pdf_document"</span><span class="p">)</span>
+
+<span class="err">#</span> <span class="n">Version</span> <span class="n">Information</span></code></pre></figure>
+
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sessionInfo</span><span class="p">()</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-txt" data-lang="txt">## R version 3.2.2 (2015-08-14)
@@ -652,7 +657,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Jul  2 14:28:43 2016<br/> Site last generated: Jul 2, 2016 <br />
+<p>Page last updated:</span> Sat Jul  2 16:20:43 2016<br/> Site last generated: Jul 2, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

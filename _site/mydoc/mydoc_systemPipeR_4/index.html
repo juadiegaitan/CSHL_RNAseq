@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Workflow templates  | Manual</title>
+<title>Workflow demo  | Manual</title>
 <link rel="stylesheet" href="/CSHL_RNAseq/css/syntax.css">
 
 
@@ -141,7 +141,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Manual feedback";
-var body = "I have some feedback about the Workflow templates page: ";
+var body = "I have some feedback about the Workflow demo page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:thomas.girke@ucr.edu?subject=";
@@ -168,7 +168,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CSHL_RNAseq/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Workflow templates">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Workflow demo">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -414,7 +414,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Introduction</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Background</a></li>
             
             
             
@@ -428,14 +428,14 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. Workflow overview</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. More detail</a></li>
             
             
             
             
             
             
-            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow templates</a></li>
+            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow demo</a></li>
             
             
             
@@ -520,7 +520,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Version Information</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
             
             
             
@@ -557,7 +557,7 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Workflow templates</h1>
+   <h1 class="post-title-main">Workflow demo</h1>
 </div>
 
 
@@ -597,130 +597,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="rna-seq-sample">RNA-Seq sample</h2>
-
-<p>Load the RNA-Seq sample workflow into your current working directory.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
-<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span></code></pre></figure>
-
-<h3 id="run-workflow">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeRNAseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">rnaseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
-
-<p>Workflow includes following steps:</p>
-
-<ol>
-  <li>Read preprocessing
-    <ul>
-      <li>Quality filtering (trimming)</li>
-      <li>FASTQ quality report</li>
-    </ul>
-  </li>
-  <li>Alignments: <em><code class="highlighter-rouge">Tophat2</code></em> (or any other RNA-Seq aligner)</li>
-  <li>Alignment stats</li>
-  <li>Read counting</li>
-  <li>Sample-wise correlation analysis</li>
-  <li>Analysis of differentially expressed genes (DEGs)</li>
-  <li>GO term enrichment analysis</li>
-  <li>Gene-wise clustering</li>
-</ol>
-
-<h2 id="chip-seq-sample">ChIP-Seq sample</h2>
-
-<p>Load the ChIP-Seq sample workflow into your current working directory.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
-<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"chipseq"</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"chipseq"</span><span class="p">)</span></code></pre></figure>
-
-<h3 id="run-workflow-1">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeChIPseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">chipseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
-
-<p>Workflow includes following steps:</p>
-
-<ol>
-  <li>Read preprocessing
-    <ul>
-      <li>Quality filtering (trimming)</li>
-      <li>FASTQ quality report</li>
-    </ul>
-  </li>
-  <li>Alignments: <em><code class="highlighter-rouge">Bowtie2</code></em> or <em><code class="highlighter-rouge">rsubread</code></em></li>
-  <li>Alignment stats</li>
-  <li>Peak calling: <em><code class="highlighter-rouge">MACS2</code></em>, <em><code class="highlighter-rouge">BayesPeak</code></em></li>
-  <li>Peak annotation with genomic context</li>
-  <li>Differential binding analysis</li>
-  <li>GO term enrichment analysis</li>
-  <li>Motif analysis</li>
-</ol>
-
-<h2 id="var-seq-sample">VAR-Seq sample</h2>
-
-<h3 id="var-seq-workflow-for-single-machine">VAR-Seq workflow for single machine</h3>
-
-<p>Load the VAR-Seq sample workflow into your current working directory.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
-<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"varseq"</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"varseq"</span><span class="p">)</span></code></pre></figure>
-
-<h3 id="run-workflow-2">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeVARseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">varseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
-
-<p>Workflow includes following steps:</p>
-
-<ol>
-  <li>Read preprocessing
-    <ul>
-      <li>Quality filtering (trimming)</li>
-      <li>FASTQ quality report</li>
-    </ul>
-  </li>
-  <li>Alignments: <em><code class="highlighter-rouge">gsnap</code></em>, <em><code class="highlighter-rouge">bwa</code></em></li>
-  <li>Variant calling: <em><code class="highlighter-rouge">VariantTools</code></em>, <em><code class="highlighter-rouge">GATK</code></em>, <em><code class="highlighter-rouge">BCFtools</code></em></li>
-  <li>Variant filtering: <em><code class="highlighter-rouge">VariantTools</code></em> and <em><code class="highlighter-rouge">VariantAnnotation</code></em></li>
-  <li>Variant annotation: <em><code class="highlighter-rouge">VariantAnnotation</code></em></li>
-  <li>Combine results from many samples</li>
-  <li>Summary statistics of samples</li>
-</ol>
-
-<h3 id="var-seq-workflow-for-computer-cluster">VAR-Seq workflow for computer cluster</h3>
-<p>The workflow template provided for this step is called <em><code class="highlighter-rouge">systemPipeVARseq.Rnw</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.Rnw">Rnw</a>).
-It runs the above VAR-Seq workflow in parallel on multiple computer nodes of an HPC system using Torque as scheduler.</p>
-
-<h2 id="ribo-seq-sample">Ribo-Seq sample</h2>
-
-<p>Load the Ribo-Seq sample workflow into your current working directory.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
-<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"riboseq"</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"riboseq"</span><span class="p">)</span></code></pre></figure>
-
-<h3 id="run-workflow-3">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeRIBOseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/riboseq/systemPipeRIBOseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/ribseq/systemPipeRIBOseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">ribseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
-
-<p>Workflow includes following steps:</p>
-
-<ol>
-  <li>Read preprocessing
-    <ul>
-      <li>Adaptor trimming and quality filtering</li>
-      <li>FASTQ quality report</li>
-    </ul>
-  </li>
-  <li>Alignments: <em><code class="highlighter-rouge">Tophat2</code></em> (or any other RNA-Seq aligner)</li>
-  <li>Alignment stats</li>
-  <li>Compute read distribution across genomic features</li>
-  <li>Adding custom features to workflow (e.g. uORFs)</li>
-  <li>Genomic read coverage along transcripts</li>
-  <li>Read counting</li>
-  <li>Sample-wise correlation analysis</li>
-  <li>Analysis of differentially expressed genes (DEGs)</li>
-  <li>GO term enrichment analysis</li>
-  <li>Gene-wise clustering</li>
-  <li>Differential ribosome binding (translational efficiency)</li>
-</ol>
+  <p>RNA-Seq example <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/05_RNAseq/systemPipeRNAseq.html">here</a></p>
 
 
 
@@ -738,7 +615,7 @@ It runs the above VAR-Seq workflow in parallel on multiple computer nodes of an 
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Jul  2 14:27:35 2016<br/> Site last generated: Jul 2, 2016 <br />
+<p>Page last updated:</span> Sat Jul  2 16:09:02 2016<br/> Site last generated: Jul 2, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

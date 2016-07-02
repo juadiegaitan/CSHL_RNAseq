@@ -414,7 +414,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Introduction</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Background</a></li>
             
             
             
@@ -428,14 +428,14 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. Workflow overview</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. More detail</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow templates</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow demo</a></li>
             
             
             
@@ -520,7 +520,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Version Information</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
             
             
             
@@ -598,16 +598,15 @@ $('#toc').on('click', 'a', function() {
     
 
   <h2 id="read-mapping-with-bowtie2tophat2">Read mapping with <code class="highlighter-rouge">Bowtie2/Tophat2</code></h2>
+<p>The NGS reads of this project will be aligned against the reference genome
+sequence using <code class="highlighter-rouge">Bowtie2/TopHat2</code> (Kim et al., 2013; Langmead et al., 2012). The
+parameter settings of the aligner are defined in the <code class="highlighter-rouge">tophat.param</code>
+file.</p>
 
-<p>The NGS reads of this project will be aligned against the reference
-genome sequence using <code class="highlighter-rouge">Bowtie2/TopHat2</code> (Kim et al., 2013; Langmead et al., 2012). The parameter 
-settings of the aligner are defined in the <code class="highlighter-rouge">tophat.param</code> file.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets_trim.txt"</span><span class="p">)</span>
 <span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="err">#</span> <span class="n">Command</span><span class="o">-</span><span class="n">line</span> <span class="n">parameters</span> <span class="k">for</span> <span class="n">first</span> <span class="n">FASTQ</span> <span class="n">file</span></code></pre></figure>
 
-<p>Submission of alignment jobs to compute cluster, here using 72 CPU cores
-(18 <code class="highlighter-rouge">qsub</code> processes each with 4 CPU cores).</p>
+<p>Submission of alignment jobs to compute cluster, here using 72 CPU cores (18 <code class="highlighter-rouge">qsub</code> processes each with 4 CPU cores).</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">moduleload</span><span class="p">(</span><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 <span class="n">system</span><span class="p">(</span><span class="s2">"bowtie2-build ./data/tair10.fasta ./data/tair10.fasta"</span><span class="p">)</span>
@@ -615,6 +614,15 @@ settings of the aligner are defined in the <code class="highlighter-rouge">topha
 <span class="n">reg</span> <span class="o">&lt;-</span> <span class="n">clusterRun</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">conffile</span><span class="o">=</span><span class="s2">".BatchJobs.R"</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">"torque.tmpl"</span><span class="p">,</span> <span class="n">Njobs</span><span class="o">=</span><span class="m">18</span><span class="p">,</span> <span class="n">runid</span><span class="o">=</span><span class="s2">"01"</span><span class="p">,</span> 
                   <span class="n">resourceList</span><span class="o">=</span><span class="n">resources</span><span class="p">)</span>
 <span class="n">waitForJobs</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="read-mapping-with-hisat2">Read mapping with <code class="highlighter-rouge">HISAT2</code></h2>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/hisat2.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="c1"># args &lt;- systemArgs(sysma="param/hisat2.param", mytargets="targets_trim.txt")
+</span><span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="c1"># Command-line parameters for first FASTQ file
+</span><span class="n">moduleload</span><span class="p">(</span><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+<span class="n">system</span><span class="p">(</span><span class="s2">"hisat2-build ./data/tair10.fasta ./data/tair10.fasta"</span><span class="p">)</span>
+<span class="n">runCommandline</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span></code></pre></figure>
 
 <p>Check whether all BAM files have been created</p>
 
@@ -662,7 +670,7 @@ with a path specified under <code class="highlighter-rouge">urlfile</code> in th
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Jul  2 14:28:43 2016<br/> Site last generated: Jul 2, 2016 <br />
+<p>Page last updated:</span> Sat Jul  2 16:20:43 2016<br/> Site last generated: Jul 2, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

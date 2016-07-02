@@ -186,9 +186,9 @@ mydocmydoc_Rgraphics_8:
 
  
 mydocmydoc_systemPipeR_1:
-  title: "1. Introduction"
+  title: "1. Background"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Introduction</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Background</a>
 
 
  
@@ -200,16 +200,16 @@ mydocmydoc_systemPipeR_2:
 
  
 mydocmydoc_systemPipeR_3:
-  title: "3. Workflow overview"
+  title: "3. More detail"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. Workflow overview</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. More detail</a>
 
 
  
 mydocmydoc_systemPipeR_4:
-  title: "4. Workflow templates"
+  title: "4. Workflow demo"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow templates</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow demo</a>
 
 
  
@@ -286,9 +286,9 @@ mydocmydoc_systemPipeRNAseq_08:
 
  
 mydocmydoc_systemPipeRNAseq_09:
-  title: "9. Version Information"
+  title: "9. Render report in HTML and PDF format"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Version Information</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a>
 
 
  
