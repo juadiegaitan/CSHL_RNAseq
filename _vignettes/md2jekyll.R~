@@ -94,7 +94,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
         image_dir2 <- gsub("^.*/", "", image_dir) # Note, image path is relative in html source
         newhtmlimgpath <- paste0(image_dir2, "/", gsub("^.*/", "", htmlimgpath))
         newhtmlimgpath <- paste0(gsub("(^.*?src=\").*", "\\1", htmlimgtag), 
-                                 newhtmlimgpath, 
+                                 "../", newhtmlimgpath, 
                                  gsub("^.*?src=\".*?(\".*)", "\\1", htmlimgtag))
         md[htmlimgindex] <- newhtmlimgpath
         ## Copy image files into image_dir
@@ -455,7 +455,7 @@ renderBib <- function(x, bibtex="bibtex.bib") {
 
 ## Run from command-line with arguments
 myargs <- commandArgs()
-md2Jekyll(mdfile=myargs[6], sidebartitle=NULL, sidebarpos=as.numeric(myargs[7]), outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/sidebars/", fenced2highlight=FALSE, image_dir=NULL)
+md2Jekyll(mdfile=myargs[6], sidebartitle=NULL, sidebarpos=as.numeric(myargs[7]), outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/sidebars/", fenced2highlight=TRUE, image_dir=NULL)
 # $ Rscript ../md2jekyll.R bioassayR.knit.md 8
 
 

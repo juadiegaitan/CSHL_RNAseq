@@ -20,6 +20,215 @@ mydocmydoc_requirements:
 
 
  
+mydocmydoc_Rbasics_01:
+  title: "1. Overview"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_01/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_01/">1. Overview</a>
+
+
+ 
+mydocmydoc_Rbasics_02:
+  title: "2. R Package Repositories"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_02/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_02/">2. R Package Repositories</a>
+
+
+ 
+mydocmydoc_Rbasics_03:
+  title: "3. Installation of R and Add-on Packages"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_03/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_03/">3. Installation of R and Add-on Packages</a>
+
+
+ 
+mydocmydoc_Rbasics_04:
+  title: "4. Getting Around"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_04/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_04/">4. Getting Around</a>
+
+
+ 
+mydocmydoc_Rbasics_05:
+  title: "5. Basic Syntax"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_05/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_05/">5. Basic Syntax</a>
+
+
+ 
+mydocmydoc_Rbasics_06:
+  title: "6. Data Types"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_06/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_06/">6. Data Types</a>
+
+
+ 
+mydocmydoc_Rbasics_07:
+  title: "7. Data objects"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_07/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_07/">7. Data objects</a>
+
+
+ 
+mydocmydoc_Rbasics_08:
+  title: "8. Important Utilities"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_08/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_08/">8. Important Utilities</a>
+
+
+ 
+mydocmydoc_Rbasics_09:
+  title: "9. Operators and Calculations"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_09/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_09/">9. Operators and Calculations</a>
+
+
+ 
+mydocmydoc_Rbasics_10:
+  title: "10. Reading and Writing External Data"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_10/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_10/">10. Reading and Writing External Data</a>
+
+
+ 
+mydocmydoc_Rbasics_11:
+  title: "11. Useful R Functions"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_11/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_11/">11. Useful R Functions</a>
+
+
+ 
+mydocmydoc_Rbasics_12:
+  title: "12. SQLite Databases"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_12/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_12/">12. SQLite Databases</a>
+
+
+ 
+mydocmydoc_Rbasics_13:
+  title: "13. R Markdown"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_13/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_13/">13. R Markdown</a>
+
+
+ 
+mydocmydoc_Rbasics_14:
+  title: "14. Session Info"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_14/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_14/">14. Session Info</a>
+
+
+ 
+mydocmydoc_Rbasics_15:
+  title: "15. References"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rbasics_15/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rbasics_15/">15. References</a>
+
+
+
+
+ 
+mydocmydoc_Rgraphics_1:
+  title: "1. Overview"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_1/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_1/">1. Overview</a>
+
+
+ 
+mydocmydoc_Rgraphics_2:
+  title: "2. Base Graphics"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_2/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_2/">2. Base Graphics</a>
+
+
+ 
+mydocmydoc_Rgraphics_3:
+  title: "3. Grid Graphics"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_3/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_3/">3. Grid Graphics</a>
+
+
+ 
+mydocmydoc_Rgraphics_4:
+  title: "4. lattice Graphics"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_4/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_4/">4. lattice Graphics</a>
+
+
+ 
+mydocmydoc_Rgraphics_5:
+  title: "5. ggplot2 Graphics"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_5/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_5/">5. ggplot2 Graphics</a>
+
+
+ 
+mydocmydoc_Rgraphics_6:
+  title: "6. Specialty Graphics"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_6/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_6/">6. Specialty Graphics</a>
+
+
+ 
+mydocmydoc_Rgraphics_7:
+  title: "7. Genome Graphics"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_7/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_7/">7. Genome Graphics</a>
+
+
+ 
+mydocmydoc_Rgraphics_8:
+  title: "8. References"
+  url: /CSHL_RNAseq/mydoc/mydoc_Rgraphics_8/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_Rgraphics_8/">8. References</a>
+
+
+
+
+ 
+mydocmydoc_systemPipeR_1:
+  title: "1. Introduction"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/">1. Introduction</a>
+
+
+ 
+mydocmydoc_systemPipeR_2:
+  title: "2. Getting Started"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_2/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_2/">2. Getting Started</a>
+
+
+ 
+mydocmydoc_systemPipeR_3:
+  title: "3. Workflow overview"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/">3. Workflow overview</a>
+
+
+ 
+mydocmydoc_systemPipeR_4:
+  title: "4. Workflow templates"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/">4. Workflow templates</a>
+
+
+ 
+mydocmydoc_systemPipeR_5:
+  title: "5. Version information"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_5/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_5/">5. Version information</a>
+
+
+ 
+mydocmydoc_systemPipeR_6:
+  title: "6. References"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeR_6/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeR_6/">6. References</a>
+
+
+
+
+ 
 mydocmydoc_systemPipeRNAseq_01:
   title: "1. Introduction"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_01/

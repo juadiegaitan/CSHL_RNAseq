@@ -16,6 +16,256 @@
 
 
 {
+"title": "Introduction to R",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_01/",
+"summary": ""
+},
+
+
+
+{
+"title": "R Package Repositories",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_02/",
+"summary": ""
+},
+
+
+
+{
+"title": "Installation of R and Add-on Packages",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_03/",
+"summary": ""
+},
+
+
+
+{
+"title": "Getting Around",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_04/",
+"summary": ""
+},
+
+
+
+{
+"title": "Basic Syntax",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_05/",
+"summary": ""
+},
+
+
+
+{
+"title": "Data Types",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_06/",
+"summary": ""
+},
+
+
+
+{
+"title": "Data objects",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_07/",
+"summary": ""
+},
+
+
+
+{
+"title": "Important Utilities",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_08/",
+"summary": ""
+},
+
+
+
+{
+"title": "Operators and Calculations",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_09/",
+"summary": ""
+},
+
+
+
+{
+"title": "Reading and Writing External Data",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_10/",
+"summary": ""
+},
+
+
+
+{
+"title": "Useful R Functions",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_11/",
+"summary": ""
+},
+
+
+
+{
+"title": "SQLite Databases",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_12/",
+"summary": ""
+},
+
+
+
+{
+"title": "R Markdown",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_13/",
+"summary": ""
+},
+
+
+
+{
+"title": "Session Info",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_14/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_15/",
+"summary": ""
+},
+
+
+
+{
+"title": "Session Info",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_16/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rbasics_17/",
+"summary": ""
+},
+
+
+
+{
+"title": "R Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_1/",
+"summary": ""
+},
+
+
+
+{
+"title": "Base Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_2/",
+"summary": ""
+},
+
+
+
+{
+"title": "Grid Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_3/",
+"summary": ""
+},
+
+
+
+{
+"title": "lattice Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_4/",
+"summary": ""
+},
+
+
+
+{
+"title": "ggplot2 Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_5/",
+"summary": ""
+},
+
+
+
+{
+"title": "Specialty Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_6/",
+"summary": ""
+},
+
+
+
+{
+"title": "Genome Graphics",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_7/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_Rgraphics_8/",
+"summary": ""
+},
+
+
+
+{
 "title": "Requirements",
 "tags": "",
 "keywords": "",
@@ -26,7 +276,7 @@
 
 
 {
-"title": "RNA-Seq Workflow Template",
+"title": "RNA-Seq Workflow",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_01/",
@@ -130,6 +380,66 @@
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/",
+"summary": ""
+},
+
+
+
+{
+"title": "NGS Workflow Overview",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_1/",
+"summary": ""
+},
+
+
+
+{
+"title": "Getting Started",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_2/",
+"summary": ""
+},
+
+
+
+{
+"title": "Workflow overview",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_3/",
+"summary": ""
+},
+
+
+
+{
+"title": "Workflow templates",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_4/",
+"summary": ""
+},
+
+
+
+{
+"title": "Version information",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_5/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeR_6/",
 "summary": ""
 },
 

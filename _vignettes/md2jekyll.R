@@ -94,7 +94,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
         image_dir2 <- gsub("^.*/", "", image_dir) # Note, image path is relative in html source
         newhtmlimgpath <- paste0(image_dir2, "/", gsub("^.*/", "", htmlimgpath))
         newhtmlimgpath <- paste0(gsub("(^.*?src=\").*", "\\1", htmlimgtag), 
-                                 newhtmlimgpath, 
+                                 "../", newhtmlimgpath, 
                                  gsub("^.*?src=\".*?(\".*)", "\\1", htmlimgtag))
         md[htmlimgindex] <- newhtmlimgpath
         ## Copy image files into image_dir

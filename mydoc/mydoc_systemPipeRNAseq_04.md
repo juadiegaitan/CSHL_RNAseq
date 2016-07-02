@@ -1,7 +1,7 @@
 ---
 title: Alignments
 keywords: 
-last_updated: Fri Jul  1 16:14:54 2016
+last_updated: Sat Jul  2 14:28:43 2016
 ---
 
 ## Read mapping with `Bowtie2/Tophat2` 
