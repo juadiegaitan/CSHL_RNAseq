@@ -1,3 +1,4 @@
-## Jekyll Documentation theme
+##  2016 CSHL Plant Sciences Course on RNA-Seq Analysis
 
-Build the site to see the instructions for using it. Or just go here: [http://idratherbewriting.com/documentation-theme-jekyll/](http://idratherbewriting.com/documentation-theme-jekyll/)
+RNA-Seq Analysis with R/Bioconductor. The life version of this site is [here](https://tgirke.github.io/CSHL_RNAseq).
+
