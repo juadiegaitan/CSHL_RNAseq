@@ -11,45 +11,10 @@
  
 
  
-mydoc_release_notes_50:
-  title: "5.0 Release notes"
-  url: /CSHL_RNAseq/mydoc_release_notes_50/
-  link: <a href="/CSHL_RNAseq/mydoc_release_notes_50/">5.0 Release notes</a>
-
-
- 
-samplepage:
-  title: "Sample page"
-  url: /CSHL_RNAseq/samplepage/
-  link: <a href="/CSHL_RNAseq/samplepage/">Sample page</a>
-
-
- 
-mydoc_introduction:
-  title: "Introduction"
-  url: /CSHL_RNAseq/mydoc_introduction/
-  link: <a href="/CSHL_RNAseq/mydoc_introduction/">Introduction</a>
-
-
- 
-mydoc_supported_features:
-  title: "Supported features"
-  url: /CSHL_RNAseq/mydoc_supported_features/
-  link: <a href="/CSHL_RNAseq/mydoc_supported_features/">Supported features</a>
-
-
- 
-mydoc_about:
-  title: "About the theme author"
-  url: /CSHL_RNAseq/mydoc_about/
-  link: <a href="/CSHL_RNAseq/mydoc_about/">About the theme author</a>
-
-
- 
-mydoc_support:
-  title: "Support"
-  url: /CSHL_RNAseq/mydoc_support/
-  link: <a href="/CSHL_RNAseq/mydoc_support/">Support</a>
+mydoc_requirements:
+  title: "Requirements"
+  url: /CSHL_RNAseq/mydoc_requirements/
+  link: <a href="/CSHL_RNAseq/mydoc_requirements/">Requirements</a>
 
 
 

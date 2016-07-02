@@ -28,28 +28,8 @@ entries:
       type: homepage
       output: web, pdf
 
-    - title: 5.0 Release notes
-      url: /mydoc_release_notes_50/
-      output: web, pdf
-
-    - title: Sample page
-      url: /samplepage/
-      output: web, pdf
-
-    - title: Introduction
-      url: /mydoc_introduction/
-      output: web, pdf
-
-    - title: Supported features
-      url: /mydoc_supported_features/
-      output: web, pdf
-
-    - title: About the theme author
-      url: /mydoc_about/
-      output: web, pdf
-
-    - title: Support
-      url: /mydoc_support/
+    - title: Requirements
+      url: /mydoc_requirements/
       output: web, pdf
 
   - title: RNA-Seq
@@ -147,37 +127,4 @@ entries:
       product: all
       version: all
       output: web
-
-  - title: Overview
-    output: web, pdf
-    folderitems:
-
-    - title: Get started
-      url: /
-      type: homepage
-      output: web, pdf
-
-    - title: 5.0 Release notes
-      url: /mydoc_release_notes_50/
-      output: web, pdf
-
-    - title: Sample page
-      url: /samplepage/
-      output: web, pdf
-
-    - title: Introduction
-      url: /mydoc_introduction/
-      output: web, pdf
-
-    - title: Supported features
-      url: /mydoc_supported_features/
-      output: web, pdf
-
-    - title: About the theme author
-      url: /mydoc_about/
-      output: web, pdf
-
-    - title: Support
-      url: /mydoc_support/
-      output: web, pdf
 
