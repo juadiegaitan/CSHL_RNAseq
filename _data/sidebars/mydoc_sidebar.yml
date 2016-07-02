@@ -23,7 +23,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
+    - title: Background
       url: /
       type: homepage
       output: web, pdf
