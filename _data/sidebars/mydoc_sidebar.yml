@@ -2,8 +2,8 @@
 
 entries:
 - title: sidebar
-  product: CSHL RNA-Seq
-  version: 2016
+  product: RNA-Seq
+  version:  
   folders:
 
   - title:

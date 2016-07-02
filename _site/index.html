@@ -92,7 +92,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="/CSHL_RNAseq/">&nbsp;<span class="projectTitle"> CSHL RNA-Seq</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="/CSHL_RNAseq/">&nbsp;<span class="projectTitle"> 2016 CSHL Course - Plant Sciences</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -100,7 +100,11 @@
                 
                 
                 
-                <li><a href="/CSHL_RNAseq/news/">News</a></li>
+                <li><a href="https://meetings.cshl.edu/courses.aspx?course=c-plan&year=16" target="_blank">CSHL</a></li>
+                
+                
+                
+                <li><a href="https://github.com/tgirke/CSHL_RNAseq" target="_blank">Github Repo</a></li>
                 
                 
                 
@@ -109,46 +113,23 @@
                 
                 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
-                        <li><a href="https://github.com/tomjohnson1492/documentation-theme-jekyll" target="_blank">Github Repo</a></li>
+                        <li><a href="https://cran.r-project.org/" target="_blank">CRAN</a></li>
                         
                         
                         
-                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                        <li><a href="http://bioconductor.org/" target="_blank">Bioconductor</a></li>
                         
                         
                         
-                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                        <li><a href="http://jekyllrb.com/" target="_blank">Jekyll</a></li>
                         
                         
                         
-                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
-                        
-                        
-                        
-                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
-                        
-                        
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a href="/CSHL_RNAseq/mydoc_introduction/">Jekyll Documentation Theme</a></li>
-                        
-                        
-                        
-                        <li><a href="/CSHL_RNAseq/p1_landing_page/">Product 1</a></li>
-                        
-                        
-                        
-                        <li><a href="/CSHL_RNAseq/p2_landing_page/">Product 2</a></li>
+                        <li><a href="http://girke.bioinformatics.ucr.edu/" target="_blank">Girke Lab</a></li>
                         
                         
                     </ul>
@@ -222,7 +203,7 @@ window.location.href = uri;
 
 
 <ul id="mysidebar" class="nav">
-    <li class="sidebarTitle">CSHL RNA-Seq 2016</li>
+    <li class="sidebarTitle">RNA-Seq </li>
     
     
     
@@ -406,34 +387,34 @@ $('#toc').on('click', 'a', function() {
 
 <p>Open the Gemfile (in any text editor) in the Jekyll doc theme project:</p>
 
-<p><code class="highlighter-rouge">
-open Gemfile
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>open Gemfile
+</code></pre>
+</div>
 
 <p>The theme’s gemfile looks as follows:</p>
 
-<p>```
-# A sample Gemfile
-source “https://rubygems.org”</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># A sample Gemfile
+source "https://rubygems.org"
 
-<h1 id="gem-rails">gem “rails”</h1>
-<p>gem ‘github-pages’
-gem ‘jekyll’
-```</p>
+# gem "rails"
+gem 'github-pages'
+gem 'jekyll'
+</code></pre>
+</div>
 
 <p>If you’re publishing on Github Pages, leave the <code class="highlighter-rouge">github-pages</code> gem there. But if not, remove <code class="highlighter-rouge">github-pages</code> because Github sometimes has dependencies that conflict with the latest versions of the Jekyll gem and Kramdown, which can be frustrating.</p>
 
 <p>Use Bundler to install all the needed Ruby gems:</p>
 
-<p><code class="highlighter-rouge">
-bundle install
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle install
+</code></pre>
+</div>
 
 <p>Now run Jekyll serve to build the theme:</p>
 
-<p><code class="highlighter-rouge">
-jekyll serve
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>jekyll serve
+</code></pre>
+</div>
 
 <h2 id="configure-the-sidebar">Configure the sidebar</h2>
 
@@ -445,39 +426,40 @@ jekyll serve
 
 <p>The sidebarconfigs.html file uses simple <code class="highlighter-rouge">if elsif</code> logic to set a variable that the sidebar.html file uses to read the sidebar data file. The code in sidebarconfigs.html looks like this:</p>
 
-<p>```liquid
-{% if page.sidebar == “home_sidebar” %}
-{% assign sidebar = site.data.sidebars.home_sidebar.entries %}</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"home_sidebar"</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">home_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
 
-<p>{% elsif page.sidebar == “product1_sidebar” %}
-{% assign sidebar = site.data.sidebars.product1_sidebar.entries %}</p>
+<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"product1_sidebar"</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">product1_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
 
-<p>{% elsif page.sidebar == “product2_sidebar” %}
-{% assign sidebar = site.data.sidebars.product2_sidebar.entries %}</p>
+<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"product2_sidebar"</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">product2_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
 
-<p>{% elsif page.sidebar == “mydoc_sidebar” %}
-{% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %}</p>
+<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"mydoc_sidebar"</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">mydoc_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
 
-<p>{% elsif page.sidebar == “tags_sidebar” %}
-{% assign sidebar = site.data.sidebars.tags_sidebar.entries %}</p>
+<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"tags_sidebar"</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">tags_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
 
-<p>{% else %}
-{% assign sidebar = site.data.sidebars.home_sidebar.entries %}
-{% endif %}
-```</p>
+<span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">home_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
+</div>
 
 <p>In each page’s frontmatter, you must specify the sidebar you want that page to use. Here’s an example of the page frontmatter showing the sidebar property:</p>
 
-<h2 id="yaml">```yaml</h2>
-<p>title: Alerts
-tags: [formatting]
-keywords: notes, tips, cautions, warnings, admonitions
-last_updated: March 20, 2016
-summary: “You can insert notes, tips, warnings, and important alerts in your content. These notes are stored as shortcodes made available through the linksrefs.hmtl include.”
-sidebar: mydoc_sidebar
-permalink: /mydoc_alerts/
-—
-```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s">Alerts</span>
+<span class="s">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">formatting</span><span class="pi">]</span>
+<span class="s">keywords</span><span class="pi">:</span> <span class="s">notes, tips, cautions, warnings, admonitions</span>
+<span class="s">last_updated</span><span class="pi">:</span> <span class="s">March 20, 2016</span>
+<span class="s">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">You</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">insert</span><span class="nv"> </span><span class="s">notes,</span><span class="nv"> </span><span class="s">tips,</span><span class="nv"> </span><span class="s">warnings,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">important</span><span class="nv"> </span><span class="s">alerts</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">content.</span><span class="nv"> </span><span class="s">These</span><span class="nv"> </span><span class="s">notes</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">stored</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">shortcodes</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">available</span><span class="nv"> </span><span class="s">through</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">linksrefs.hmtl</span><span class="nv"> </span><span class="s">include."</span>
+<span class="s">sidebar</span><span class="pi">:</span> <span class="s">mydoc_sidebar</span>
+<span class="s">permalink</span><span class="pi">:</span> <span class="s">/mydoc_alerts/</span>
+<span class="nn">---</span>
+</code></pre>
+</div>
 
 <p>The <code class="highlighter-rouge">sidebar: mydoc_sidebar</code> refers to the _data/sidebars/mydoc_sidebar.yml file.</p>
 
@@ -491,47 +473,36 @@ permalink: /mydoc_alerts/
 
 <p>The sidebar data file uses a specific YAML syntax that you must follow. Follow the sample pattern shown. For example:</p>
 
-<p>```yaml
-entries:
-- title: sidebar
-  product: Jekyll Doc Theme
-  version: 5.0
-  folders:
-  - title: Overview
-    output: web, pdf
-    folderitems:
-    - title: Some page
-      url: /some-doc-page/
-      output: web, pdf
-    - title: Another page
-      url: /another-doc-page/
-      output: web, pdf</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">entries</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">sidebar</span>
+  <span class="s">product</span><span class="pi">:</span> <span class="s">Jekyll Doc Theme</span>
+  <span class="s">version</span><span class="pi">:</span> <span class="s">5.0</span>
+  <span class="s">folders</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Overview</span>
+    <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
+    <span class="s">folderitems</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Some page</span>
+      <span class="s">url</span><span class="pi">:</span> <span class="s">/some-doc-page/</span>
+      <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
+    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Another page</span>
+      <span class="s">url</span><span class="pi">:</span> <span class="s">/another-doc-page/</span>
+      <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
 
-<ul>
-  <li>title: Configuration
-output: web
-folderitems:
-    <ul>
-      <li>title: How to configure the system
-url: /configure-system/
-output: web, pdf
-subfolders:
-        <ul>
-          <li>title: Config process
-output: web, pdf
-subfolderitems:
-            <ul>
-              <li>title: Creating the config file
-url: /config-file-how-to/
-output: web, pdf
-```</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Configuration</span>
+    <span class="s">output</span><span class="pi">:</span> <span class="s">web</span>
+    <span class="s">folderitems</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">How to configure the system</span>
+      <span class="s">url</span><span class="pi">:</span> <span class="s">/configure-system/</span>
+      <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
+      <span class="s">subfolders</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Config process</span>
+        <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
+        <span class="s">subfolderitems</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Creating the config file</span>
+          <span class="s">url</span><span class="pi">:</span> <span class="s">/config-file-how-to/</span>
+          <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
+</code></pre>
+</div>
 
 <p>Each folder or subfolder must contain a title and output property. Each <code class="highlighter-rouge">folderitem</code> or <code class="highlighter-rouge">subfolderitem</code> must contain a <code class="highlighter-rouge">title</code>, <code class="highlighter-rouge">url</code>, and <code class="highlighter-rouge">output</code> property.</p>
 
@@ -541,20 +512,20 @@ output: web, pdf
 
 <p>To accommodate the title page and table of contents in PDF outputs, each product sidebar must list these pages before any other:</p>
 
-<p><code class="highlighter-rouge">yaml
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage/
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage/
-      output: pdf
-      type: frontmatter
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span>
+    <span class="s">output</span><span class="pi">:</span> <span class="s">pdf</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
+    <span class="s">folderitems</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span>
+      <span class="s">url</span><span class="pi">:</span> <span class="s">/titlepage/</span>
+      <span class="s">output</span><span class="pi">:</span> <span class="s">pdf</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
+    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span>
+      <span class="s">url</span><span class="pi">:</span> <span class="s">/tocpage/</span>
+      <span class="s">output</span><span class="pi">:</span> <span class="s">pdf</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
+</code></pre>
+</div>
 
 <p>Leave the output as <code class="highlighter-rouge">output: pdf</code> for these frontmatter pages so that they don’t appear in the web output.</p>
 
@@ -564,16 +535,17 @@ output: web, pdf
 
 <p>When you write pages, include these same frontmatter keys with each page:</p>
 
-<h2 id="yaml-1">```yaml</h2>
-<p>title: “Some title”
-tags: [sample1, sample2]
-keywords: keyword1, keyword2, keyword3
-last_updated: Month day, year
-summary: “optional summary here”
-sidebar: sidebar name
-permalink: /yoururl/
-—
-```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Some</span><span class="nv"> </span><span class="s">title"</span>
+<span class="s">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">sample1</span><span class="pi">,</span> <span class="nv">sample2</span><span class="pi">]</span>
+<span class="s">keywords</span><span class="pi">:</span> <span class="s">keyword1, keyword2, keyword3</span>
+<span class="s">last_updated</span><span class="pi">:</span> <span class="s">Month day, year</span>
+<span class="s">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">optional</span><span class="nv"> </span><span class="s">summary</span><span class="nv"> </span><span class="s">here"</span>
+<span class="s">sidebar</span><span class="pi">:</span> <span class="s">sidebar name</span>
+<span class="s">permalink</span><span class="pi">:</span> <span class="s">/yoururl/</span>
+<span class="nn">---</span>
+</code></pre>
+</div>
 
 <p>(You will customize the values for each of these keys, of course.)</p>
 
@@ -626,34 +598,27 @@ permalink: /yoururl/
 
 <p>This theme uses Kramdown markdown. Kramdown is similar to Github-flavored Markdown, except that when you have text that intercepts list items, the spacing of the intercepting text must align with the spacing of the first character after the space of a numbered list item. Basically, with your list item numbering, use two spaces after the dot in the number, like this:</p>
 
-<p><code class="highlighter-rouge">
-1.  First item
+<div class="highlighter-rouge"><pre class="highlight"><code>1.  First item
 2.  Second item
 3.  Third item
-</code></p>
-
-<p>When you want to insert paragraphs, notes, code snippets, or other matter in between the list items, use four spaces to indent. The four spaces will line up with the first letter of the list item (the <strong>F</strong>irst or <strong>S</strong>econd or <strong>T</strong>hird).</p>
-
-<p>```
-1.  First item</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>```
-alert("hello");
-```
 </code></pre>
 </div>
 
-<ol>
-  <li>
-    <p>Second item</p>
+<p>When you want to insert paragraphs, notes, code snippets, or other matter in between the list items, use four spaces to indent. The four spaces will line up with the first letter of the list item (the <strong>F</strong>irst or <strong>S</strong>econd or <strong>T</strong>hird).</p>
 
-    <p>Some pig!</p>
-  </li>
-  <li>
-    <p>Third item
-```</p>
-  </li>
-</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code>1.  First item
+
+    ```
+    alert("hello");
+    ```
+
+2.  Second item
+
+    Some pig!
+
+3.  Third item
+</code></pre>
+</div>
 
 <p>See the topics under “Formatting” in the sidebar for more information.</p>
 
@@ -688,7 +653,7 @@ alert("hello");
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
- Site last generated: Jul 1, 2016 <br />
+ Site last generated: Jul 2, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

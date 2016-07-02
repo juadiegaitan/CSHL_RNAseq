@@ -303,10 +303,6 @@ p2_sample14:
 
 
 
-news:
-  title: "News"
-  url: "news"
-  link: "<a href='/news/'>News</a>"
 
 
 
@@ -321,30 +317,6 @@ news:
 
 
 
-
-
-
-
-
-
-mydoc_introduction:
-  title: "Jekyll Documentation Theme"
-  url: "mydoc_introduction"
-  link: "<a href='/mydoc_introduction/'>Jekyll Documentation Theme</a>"
-
-
-
-p1_landing_page:
-  title: "Product 1"
-  url: "p1_landing_page"
-  link: "<a href='/p1_landing_page/'>Product 1</a>"
-
-
-
-p2_landing_page:
-  title: "Product 2"
-  url: "p2_landing_page"
-  link: "<a href='/p2_landing_page/'>Product 2</a>"
 
 
 
