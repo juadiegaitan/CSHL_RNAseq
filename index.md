@@ -1,5 +1,5 @@
 ---
-title: CSHL Frontiers and Techniques in Plant Biology
+title: RNA-Seq Analysis with R and Bioconductor
 tags: [getting_started]
 sidebar: mydoc_sidebar
 type: homepage
