@@ -599,15 +599,40 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="laptops">Laptops</h2>
 
-<p>…</p>
+<p>Users are expected to bring a laptop with a functional wireless connection and
+a recent internet browser version (e.g. Firefox, Chrome or Safari)
+preinstalled. Tablet computers with mobile operating systems are not suitable
+for running the required software.  If your laptop has special firewall
+settings (e.g. company owned laptops), then please make sure you know how to
+administer your firewall settings (e.g. lower restrictions or turn on/off) to
+allow <code class="highlighter-rouge">biocLite</code> installs.</p>
 
-<h2 id="r-and-rstudio">R and RStudio</h2>
+<h2 id="software-installs">Software Installs</h2>
 
-<p>…</p>
+<p>In addition, please follow the software install instructions 
+for each event as outlined below.</p>
 
-<h2 id="packages">Packages</h2>
+<ol>
+  <li>Install latest R Version 3.3.1 from here: http://www.r-project.org/</li>
+  <li>Next, install RStudio from here: http://rstudio.org/</li>
+  <li>IGV (Integrative Genomics Viewer) will be used in some parts of the NGS analysis sections: http://www.broadinstitute.org/igv</li>
+</ol>
 
-<p>…</p>
+<h2 id="r-packages">R Packages</h2>
+
+<p>To install the R libraries required for this course module, please copy &amp;
+paste the following commands into the RStudio (or the R) console and execute
+them with the enter key:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
+<span class="n">biocLite</span><span class="p">()</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s2">"BiocUpgrade"</span><span class="p">)</span>
+<span class="n">biocVersion</span><span class="p">()</span> <span class="c1"># Note: this should return Bioc Version '3.3' or higher!!
+</span><span class="n">sessionInfo</span><span class="p">()</span> <span class="c1"># Note: this needs to return R Version 3.3.1!!
+</span><span class="n">install.packages</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">,</span> <span class="s2">"lattice"</span><span class="p">,</span> <span class="s2">"ape"</span><span class="p">,</span> <span class="s2">"gplots"</span><span class="p">))</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"BiocStyle"</span><span class="p">,</span> <span class="s2">"ggbio"</span><span class="p">,</span> <span class="s2">"ShortRead"</span><span class="p">,</span> <span class="s2">"Biostrings"</span><span class="p">,</span> <span class="s2">"IRanges"</span><span class="p">,</span> <span class="s2">"BSgenome"</span><span class="p">,</span> <span class="s2">"rtracklayer"</span><span class="p">,</span> <span class="s2">"Rsamtools"</span><span class="p">,</span> <span class="s2">"GenomicRanges"</span><span class="p">,</span> <span class="s2">"GenomicAlignments"</span><span class="p">,</span> <span class="s2">"DESeq2"</span><span class="p">,</span> <span class="s2">"edgeR"</span><span class="p">,</span> <span class="s2">"AnnotationDbi"</span><span class="p">,</span> <span class="s2">"systemPipeR"</span><span class="p">,</span> <span class="s2">"systemPipeRdata"</span><span class="p">))</span>
+</code></pre>
+</div>
 
 
 
