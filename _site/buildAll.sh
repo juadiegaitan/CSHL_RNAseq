@@ -26,13 +26,4 @@ git commit -am "some edits"
 git push -u origin gh-pages
 echo "Committed/pushed changes to gh-pages branch on GitHub"
 
-## (5) Sync changes to gh-pages branch
-# git checkout gh-pages
-# rsync -avh --stats ../doc_outputs/mydoc/designers/ .
-# clear
-# git add -A :/
-# git commit -am "some edits"; git push -u origin gh-pages
-# echo "Committed/pushed changes to gh-pages branch on GitHub"
-# git checkout master 
-# echo "Switched back to master branch on local repo."
 
