@@ -11,10 +11,10 @@
  
 
  
-mydoc_requirements:
+mydocmydoc_requirements:
   title: "Requirements"
-  url: /CSHL_RNAseq/mydoc_requirements/
-  link: <a href="/CSHL_RNAseq/mydoc_requirements/">Requirements</a>
+  url: /CSHL_RNAseq/mydoc/mydoc_requirements/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_requirements/">Requirements</a>
 
 
 

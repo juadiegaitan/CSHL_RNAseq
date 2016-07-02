@@ -29,7 +29,7 @@ entries:
       output: web, pdf
 
     - title: Requirements
-      url: /mydoc_requirements/
+      url: /mydoc/mydoc_requirements/
       output: web, pdf
 
   - title: RNA-Seq

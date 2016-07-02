@@ -23,13 +23,13 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: Overview
       url: /
       type: homepage
       output: web, pdf
 
     - title: Requirements
-      url: /mydoc_requirements/
+      url: /mydoc/mydoc_requirements/
       output: web, pdf
 
   - title: RNA-Seq
