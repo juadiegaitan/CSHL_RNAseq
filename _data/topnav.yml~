@@ -20,10 +20,8 @@ topnav_dropdowns:
           external_url: http://bioconductor.org/
         - title: Jekyll 
           external_url: http://jekyllrb.com/
-        - title: Jekyll on Stack Overflow
-          external_url: http://stackoverflow.com/questions/tagged/jekyll
-        - title: Jekyll on my blog
-          external_url: http://idratherbewriting.com/category-jekyll/
+        - title: Girke Lab
+          external_url: http://girke.bioinformatics.ucr.edu/
 
 
 
