@@ -18,8 +18,6 @@ topnav_dropdowns:
           external_url: https://cran.r-project.org/
         - title: Bioconductor
           external_url: http://bioconductor.org/
-        - title: Jekyll 
-          external_url: http://jekyllrb.com/
         - title: Girke Lab
           external_url: http://girke.bioinformatics.ucr.edu/
 

@@ -6,7 +6,7 @@ topnav:
     - title: CSHL
       external_url: https://meetings.cshl.edu/courses.aspx?course=c-plan&year=16
     - title: Github Repo
-      external_url: https://github.com/tgirke/CSHL_RNAseq
+      external_url: https://github.com/tgirke/CSHL_RNAseq/tree/gh-pages
 
 #Topnav dropdowns
 topnav_dropdowns:
