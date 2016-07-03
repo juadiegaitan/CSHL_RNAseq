@@ -31,6 +31,10 @@ entries:
     - title: Requirements
       url: /mydoc/mydoc_requirements/
       output: web, pdf
+    
+    - title: Slides
+      url: /mydoc/mydoc_slides/
+      output: web, pdf
 
   - title: Introduction to R
     audience: writers, designers
