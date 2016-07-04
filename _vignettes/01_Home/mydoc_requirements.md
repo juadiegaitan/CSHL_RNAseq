@@ -20,23 +20,34 @@ allow `biocLite` installs.
 In addition, please follow the software install instructions 
 for each event as outlined below. 
 
-1. Install latest R Version 3.3.1 from here: http://www.r-project.org/
-2. Next, install RStudio from here: http://rstudio.org/ 
-3. IGV (Integrative Genomics Viewer) will be used in some parts of the NGS analysis sections: http://www.broadinstitute.org/igv
+1. Install latest R Version 3.3.1 from here: [(http://www.r-project.org](http://www.r-project.org/)
+2. Next, install RStudio from here: [http://rstudio.org](http://rstudio.org/) 
+3. IGV (Integrative Genomics Viewer) will be used in some parts of the NGS analysis sections: [http://www.broadinstitute.org/igv](http://www.broadinstitute.org/igv)
 
 ## R Packages
 
-To install the R libraries required for this course module, please copy &
-paste the following commands into the RStudio (or the R) console and execute
-them with the enter key:
+To install the R/Bioconductor libraries required for this course module, please copy &
+paste the following commands into your RStudio (or the R) console and execute
+them with the enter key. Skip this step if you have the proper Bioconductor base packages
+installed.
 
 ```r
 source("http://bioconductor.org/biocLite.R")
 biocLite()
-biocLite("BiocUpgrade")
-biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
-sessionInfo() # Note: this needs to return R Version 3.3.1!!
-install.packages(c("ggplot2", "lattice", "ape", "gplots"))
-biocLite(c("BiocStyle", "ggbio", "ShortRead", "Biostrings", "IRanges", "BSgenome", "rtracklayer", "Rsamtools", "GenomicRanges", "GenomicAlignments", "DESeq2", "edgeR", "AnnotationDbi", "systemPipeR", "systemPipeRdata"))
 ```
 
+Check for correct R and Bioc versions
+```r
+source("http://bioconductor.org/biocLite.R")
+biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
+# biocLite("BiocUpgrade") # Run this command if your Bioc version is outdated
+sessionInfo() # Note: this needs to return R Version 3.3.1!!
+```
+
+Install packages required for this course. Note, the install of the sample data (last step) may take some time.
+```r
+source("http://bioconductor.org/biocLite.R")
+install.packages(c("ggplot2", "lattice", "ape", "gplots"))
+biocLite(c("BiocStyle", "ggbio", "ShortRead", "Biostrings", "IRanges", "BSgenome", "rtracklayer", "Rsamtools", "GenomicRanges", "GenomicAlignments", "DESeq2", "edgeR", "AnnotationDbi", "systemPipeR"))
+biocLite("tgirke/systemPipeRdata", build_vignettes=TRUE, dependencies=TRUE)
+```
