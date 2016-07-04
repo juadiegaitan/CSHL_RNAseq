@@ -40,10 +40,10 @@ biocLite()
 (2) Check for correct R and Bioc versions
 
 ```r
+sessionInfo() # Note: this needs to return R Version 3.3.1!!
 source("http://bioconductor.org/biocLite.R")
 biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
 # biocLite("BiocUpgrade") # Run this command if your Bioc version is outdated
-sessionInfo() # Note: this needs to return R Version 3.3.1!!
 ```
 
 (3) Install specific packages required for this course. Note, the install of the sample data (last line) may take some time.

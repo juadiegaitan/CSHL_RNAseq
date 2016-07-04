@@ -648,10 +648,10 @@ them with the enter key.</p>
 
 <p>(2) Check for correct R and Bioc versions</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">sessionInfo</span><span class="p">()</span> <span class="c1"># Note: this needs to return R Version 3.3.1!!
+</span><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
 <span class="n">biocVersion</span><span class="p">()</span> <span class="c1"># Note: this should return Bioc Version '3.3' or higher!!
 # biocLite("BiocUpgrade") # Run this command if your Bioc version is outdated
-</span><span class="n">sessionInfo</span><span class="p">()</span> <span class="c1"># Note: this needs to return R Version 3.3.1!!
 </span></code></pre>
 </div>
 
