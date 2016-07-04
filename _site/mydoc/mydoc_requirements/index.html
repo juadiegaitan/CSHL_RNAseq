@@ -639,12 +639,14 @@ for this event as outlined below.</p>
 paste the following commands into your RStudio (or the R) console and execute
 them with the enter key.</p>
 
+<p>(1) Install of Bioconductor base packages</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
 <span class="n">biocLite</span><span class="p">()</span>
 </code></pre>
 </div>
 
-<p>Check for correct R and Bioc versions</p>
+<p>(2) Check for correct R and Bioc versions</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
 <span class="n">biocVersion</span><span class="p">()</span> <span class="c1"># Note: this should return Bioc Version '3.3' or higher!!
@@ -653,7 +655,7 @@ them with the enter key.</p>
 </span></code></pre>
 </div>
 
-<p>Install packages required for this course. Note, the install of the sample data (last step) may take some time.</p>
+<p>(3) Install specific packages required for this course. Note, the install of the sample data (last line) may take some time.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
 <span class="n">install.packages</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">,</span> <span class="s2">"lattice"</span><span class="p">,</span> <span class="s2">"ape"</span><span class="p">,</span> <span class="s2">"gplots"</span><span class="p">))</span>

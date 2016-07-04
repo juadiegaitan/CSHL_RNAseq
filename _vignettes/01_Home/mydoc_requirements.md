@@ -30,12 +30,14 @@ To install the R/Bioconductor libraries required for this course module, please 
 paste the following commands into your RStudio (or the R) console and execute
 them with the enter key. 
 
+(1) Install of Bioconductor base packages
+
 ```r
 source("http://bioconductor.org/biocLite.R")
 biocLite()
 ```
 
-Check for correct R and Bioc versions
+(2) Check for correct R and Bioc versions
 
 ```r
 source("http://bioconductor.org/biocLite.R")
@@ -44,7 +46,7 @@ biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
 sessionInfo() # Note: this needs to return R Version 3.3.1!!
 ```
 
-Install packages required for this course. Note, the install of the sample data (last step) may take some time.
+(3) Install specific packages required for this course. Note, the install of the sample data (last line) may take some time.
 
 ```r
 source("http://bioconductor.org/biocLite.R")
