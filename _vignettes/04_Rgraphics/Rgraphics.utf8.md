@@ -1,7 +1,7 @@
 ---
 title: R Graphics
 author: "Thomas Girke (thomas.girke@ucr.edu)"
-date: "Last update: 02 July, 2016" 
+date: "Last update: 04 July, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -25,7 +25,7 @@ bibliography: bibtex.bib
     - Then fix things, usually a lot...
 
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rgraphics.Rmd', clean=F)"; R CMD Stangle Rgraphics.Rmd; Rscript ../md2jekyll.R Rgraphics.knit.md 3
+Rscript -e "rmarkdown::render('Rgraphics.Rmd', clean=F)"; R CMD Stangle Rgraphics.Rmd; Rscript ../md2jekyll.R Rgraphics.knit.md 4
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master

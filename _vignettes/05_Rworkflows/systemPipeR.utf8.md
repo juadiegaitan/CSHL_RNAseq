@@ -1,7 +1,7 @@
 ---
 title: "NGS Workflow Overview" 
 author: "Author: Thomas Girke (thomas.girke@ucr.edu)"
-date: "Last update: 02 July, 2016" 
+date: "Last update: 04 July, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -21,7 +21,7 @@ bibliography: bibtex.bib
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeR.Rmd', clean=F)"; R CMD Stangle systemPipeR.Rmd; Rscript ../md2jekyll.R systemPipeR.knit.md 4
+Rscript -e "rmarkdown::render('systemPipeR.Rmd', clean=F)"; R CMD Stangle systemPipeR.Rmd; Rscript ../md2jekyll.R systemPipeR.knit.md 5
 
 -->
 

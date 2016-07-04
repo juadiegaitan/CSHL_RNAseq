@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 02 July, 2016" 
+date: "Last update: 04 July, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -21,7 +21,7 @@ bibliography: bibtex.bib
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', clean=F)"; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 2
+Rscript -e "rmarkdown::render('Rbasics.Rmd', clean=F)"; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
@@ -1144,7 +1144,7 @@ package from Bioconductor.
  ---
 title: "My First R Markdown Document"
 author: "Author: First Last"
-date: "Last update: 02 July, 2016"
+date: "Last update: 04 July, 2016"
 output:
   BiocStyle::html_document:
     toc: true

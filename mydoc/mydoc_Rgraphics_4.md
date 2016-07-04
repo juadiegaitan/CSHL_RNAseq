@@ -1,7 +1,7 @@
 ---
 title: lattice Graphics
 keywords: 
-last_updated: Sat Jul  2 15:44:24 2016
+last_updated: Mon Jul  4 15:47:21 2016
 ---
 
 - What is `lattice`?

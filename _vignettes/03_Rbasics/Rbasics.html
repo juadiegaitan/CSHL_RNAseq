@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="header">
 <h1 class="title">Introduction to R</h1>
 <h4 class="author"><em>Author: Thomas Girke</em></h4>
-<h4 class="date"><em>Last update: 02 July, 2016</em></h4>
+<h4 class="date"><em>Last update: 04 July, 2016</em></h4>
 </div>
 
 <h1>Contents</h1>
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
 -->
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', clean=F)"; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 2
+Rscript -e "rmarkdown::render('Rbasics.Rmd', clean=F)"; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
@@ -756,7 +756,7 @@ dbWriteTable(mydb, &quot;mydf1&quot;, mydf1)</code></pre>
 <pre><code> ---
 title: &quot;My First R Markdown Document&quot;
 author: &quot;Author: First Last&quot;
-date: &quot;Last update: 02 July, 2016&quot;
+date: &quot;Last update: 04 July, 2016&quot;
 output:
   BiocStyle::html_document:
     toc: true

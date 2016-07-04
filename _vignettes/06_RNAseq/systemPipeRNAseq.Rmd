@@ -26,7 +26,7 @@ bibliography: bibtex.bib
     - The fix things, usually a lot...
 
 - Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', clean=F)"; R CMD Stangle systemPipeRNAseq.Rmd; Rscript ../md2jekyll.R systemPipeRNAseq.knit.md 5
+Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', clean=F)"; R CMD Stangle systemPipeRNAseq.Rmd; Rscript ../md2jekyll.R systemPipeRNAseq.knit.md 6
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master

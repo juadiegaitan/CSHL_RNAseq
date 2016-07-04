@@ -1,7 +1,7 @@
 ---
 title: RNA-Seq Workflow 
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 02 July, 2016" 
+date: "Last update: 04 July, 2016" 
 output:
   BiocStyle::html_document:
     toc: true

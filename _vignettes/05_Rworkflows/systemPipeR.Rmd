@@ -21,7 +21,7 @@ bibliography: bibtex.bib
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeR.Rmd', clean=F)"; R CMD Stangle systemPipeR.Rmd; Rscript ../md2jekyll.R systemPipeR.knit.md 4
+Rscript -e "rmarkdown::render('systemPipeR.Rmd', clean=F)"; R CMD Stangle systemPipeR.Rmd; Rscript ../md2jekyll.R systemPipeR.knit.md 5
 
 -->
 

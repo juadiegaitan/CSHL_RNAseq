@@ -1,16 +1,16 @@
 ---
 title: Introduction to R 
 keywords: 
-last_updated: Sat Jul  2 15:34:17 2016
+last_updated: Mon Jul  4 15:46:31 2016
 ---
 Author: Thomas Girke
 
-Last update: 02 July, 2016 
+Last update: 04 July, 2016 
 
 Alternative formats of this vignette:
-[`HTML`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/02_Rbasics/Rbasics.html),
-[`.Rmd`](https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/02_Rbasics/Rbasics.Rmd),
-[`.R`](https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/02_Rbasics/Rbasics.R)
+[`HTML`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/03_Rbasics/Rbasics.html),
+[`.Rmd`](https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/03_Rbasics/Rbasics.Rmd),
+[`.R`](https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/03_Rbasics/Rbasics.R)
 
 ## Overview
 

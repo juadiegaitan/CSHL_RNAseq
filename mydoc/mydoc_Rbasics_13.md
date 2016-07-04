@@ -1,7 +1,7 @@
 ---
 title: R Markdown
 keywords: 
-last_updated: Sat Jul  2 15:34:17 2016
+last_updated: Mon Jul  4 15:46:31 2016
 ---
 
 ## Overview
@@ -56,7 +56,7 @@ package from Bioconductor.
  ---
 title: "My First R Markdown Document"
 author: "Author: First Last"
-date: "Last update: 02 July, 2016"
+date: "Last update: 04 July, 2016"
 output:
   BiocStyle::html_document:
     toc: true
