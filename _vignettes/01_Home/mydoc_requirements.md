@@ -28,8 +28,7 @@ for each event as outlined below.
 
 To install the R/Bioconductor libraries required for this course module, please copy &
 paste the following commands into your RStudio (or the R) console and execute
-them with the enter key. Skip this step if you have the proper Bioconductor base packages
-installed.
+them with the enter key. 
 
 ```r
 source("http://bioconductor.org/biocLite.R")
