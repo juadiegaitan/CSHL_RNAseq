@@ -31,7 +31,11 @@ entries:
     - title: Requirements
       url: /mydoc/mydoc_requirements/
       output: web, pdf
-    
+  
+  - title: Slides
+    output: web, pdf
+    folderitems:
+
     - title: Slides
       url: /mydoc/mydoc_slides/
       output: web, pdf

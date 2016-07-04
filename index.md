@@ -6,15 +6,10 @@ last_updated: Fri Jul  1 16:14:54 2016
 
 ## Overview
 
-This tutorial provides a short introduction to the analysis of RNA-Seq experiments with 
+This course provides an introduction to the analysis of RNA-Seq experiments with 
 R and Bioconductor. 
 
 <img title="cshlrnaseqlogo" src="mydoc/CSHL_RNAseq/logo_50.png"><img/>
 
-## R and Bioconductor
-
-The Bioconductor project offers a large infrastructure of tools for 
-the analysis and comprehension of high-throughput genomic data. It is based on the R statistical programming
-language, a widely used open source environment for data analysis and graphics. 
 
 
