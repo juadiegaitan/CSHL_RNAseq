@@ -37,6 +37,7 @@ biocLite()
 ```
 
 Check for correct R and Bioc versions
+
 ```r
 source("http://bioconductor.org/biocLite.R")
 biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
@@ -45,6 +46,7 @@ sessionInfo() # Note: this needs to return R Version 3.3.1!!
 ```
 
 Install packages required for this course. Note, the install of the sample data (last step) may take some time.
+
 ```r
 source("http://bioconductor.org/biocLite.R")
 install.packages(c("ggplot2", "lattice", "ape", "gplots"))

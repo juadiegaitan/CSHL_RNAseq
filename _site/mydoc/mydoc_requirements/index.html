@@ -645,21 +645,23 @@ installed.</p>
 </code></pre>
 </div>
 
-<p>Check for correct R and Bioc versions
-<code class="highlighter-rouge">r
-source("http://bioconductor.org/biocLite.R")
-biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
-# biocLite("BiocUpgrade") # Run this command if your Bioc version is outdated
-sessionInfo() # Note: this needs to return R Version 3.3.1!!
-</code></p>
+<p>Check for correct R and Bioc versions</p>
 
-<p>Install packages required for this course. Note, the install of the sample data (last step) may take some time.
-<code class="highlighter-rouge">r
-source("http://bioconductor.org/biocLite.R")
-install.packages(c("ggplot2", "lattice", "ape", "gplots"))
-biocLite(c("BiocStyle", "ggbio", "ShortRead", "Biostrings", "IRanges", "BSgenome", "rtracklayer", "Rsamtools", "GenomicRanges", "GenomicAlignments", "DESeq2", "edgeR", "AnnotationDbi", "systemPipeR"))
-biocLite("tgirke/systemPipeRdata", build_vignettes=TRUE, dependencies=TRUE)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
+<span class="n">biocVersion</span><span class="p">()</span> <span class="c1"># Note: this should return Bioc Version '3.3' or higher!!
+# biocLite("BiocUpgrade") # Run this command if your Bioc version is outdated
+</span><span class="n">sessionInfo</span><span class="p">()</span> <span class="c1"># Note: this needs to return R Version 3.3.1!!
+</span></code></pre>
+</div>
+
+<p>Install packages required for this course. Note, the install of the sample data (last step) may take some time.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span>
+<span class="n">install.packages</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">,</span> <span class="s2">"lattice"</span><span class="p">,</span> <span class="s2">"ape"</span><span class="p">,</span> <span class="s2">"gplots"</span><span class="p">))</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"BiocStyle"</span><span class="p">,</span> <span class="s2">"ggbio"</span><span class="p">,</span> <span class="s2">"ShortRead"</span><span class="p">,</span> <span class="s2">"Biostrings"</span><span class="p">,</span> <span class="s2">"IRanges"</span><span class="p">,</span> <span class="s2">"BSgenome"</span><span class="p">,</span> <span class="s2">"rtracklayer"</span><span class="p">,</span> <span class="s2">"Rsamtools"</span><span class="p">,</span> <span class="s2">"GenomicRanges"</span><span class="p">,</span> <span class="s2">"GenomicAlignments"</span><span class="p">,</span> <span class="s2">"DESeq2"</span><span class="p">,</span> <span class="s2">"edgeR"</span><span class="p">,</span> <span class="s2">"AnnotationDbi"</span><span class="p">,</span> <span class="s2">"systemPipeR"</span><span class="p">))</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s2">"tgirke/systemPipeRdata"</span><span class="p">,</span> <span class="n">build_vignettes</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+</code></pre>
+</div>
 
 
 <div class="tags">
