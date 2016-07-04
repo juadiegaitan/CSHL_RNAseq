@@ -18,7 +18,7 @@ allow `biocLite` installs.
 ## Software Installs
 
 In addition, please follow the software install instructions 
-for each event as outlined below. 
+for this event as outlined below. 
 
 1. Install latest R Version 3.3.1 from here: [(http://www.r-project.org](http://www.r-project.org/)
 2. Next, install RStudio from here: [http://rstudio.org](http://rstudio.org/) 
