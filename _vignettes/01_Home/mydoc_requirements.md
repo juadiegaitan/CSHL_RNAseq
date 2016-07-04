@@ -22,7 +22,7 @@ for this event as outlined below.
 
 1. Install latest R Version 3.3.1 from here: [(http://www.r-project.org](http://www.r-project.org/)
 2. Next, install RStudio from here: [http://rstudio.org](http://rstudio.org/) 
-3. IGV (Integrative Genomics Viewer) will be used in some parts of the NGS analysis sections: [http://www.broadinstitute.org/igv](http://www.broadinstitute.org/igv)
+3. IGV (Integrative Genomics Viewer) will be used for a short demonstration: [http://www.broadinstitute.org/igv](http://www.broadinstitute.org/igv). This install is optional.
 
 ## R Packages
 
