@@ -549,14 +549,21 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Version Information</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. Funding</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_13/">13. References</a></li>
             
             
             
@@ -637,6 +644,18 @@ file.</p>
                   <span class="n">resourceList</span><span class="o">=</span><span class="n">resources</span><span class="p">)</span>
 <span class="n">waitForJobs</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span></code></pre></figure>
 
+<h2 id="alignment-with-rsubread">Alignment with <code class="highlighter-rouge">Rsubread</code></h2>
+<p>The following example shows how one can use within the <code class="highlighter-rouge">systemPipeR</code> environment the R-based
+aligner <code class="highlighter-rouge">Rsubread</code> or other R-based functions that read from input files and write to output files.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">Rsubread</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/rsubread.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">buildindex</span><span class="p">(</span><span class="n">basename</span><span class="o">=</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">reference</span><span class="o">=</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">))</span> <span class="c1"># Build indexed reference genome
+</span><span class="n">align</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">readfile1</span><span class="o">=</span><span class="n">infile1</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">input_format</span><span class="o">=</span><span class="s2">"FASTQ"</span><span class="p">,</span>
+      <span class="n">output_file</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">"SAM"</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)))</span> <span class="n">asBam</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">i</span><span class="p">],</span> <span class="n">destination</span><span class="o">=</span><span class="n">gsub</span><span class="p">(</span><span class="s2">".sam"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">i</span><span class="p">]),</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">indexDestination</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">unlink</span><span class="p">(</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">));</span> <span class="n">unlink</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">),</span><span class="s2">".indel"</span><span class="p">))</span></code></pre></figure>
+
 <h2 id="read-mapping-with-hisat2">Read mapping with <code class="highlighter-rouge">HISAT2</code></h2>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/hisat2.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
@@ -692,7 +711,7 @@ with a path specified under <code class="highlighter-rouge">urlfile</code> in th
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Fri Jul  8 08:26:15 2016<br/> Site last generated: Jul 8, 2016 <br />
+<p>Page last updated:</span> Fri Jul  8 12:02:11 2016<br/> Site last generated: Jul 8, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

@@ -3,12 +3,16 @@ BiocStyle::markdown()
 options(width=100, max.print=1000)
 knitr::opts_chunk$set(
     eval=as.logical(Sys.getenv("KNITR_EVAL", "TRUE")),
-    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")))
+    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")),
+    warning=FALSE, message=FALSE)
 
 ## ----genRna_workflow, eval=FALSE-----------------------------------------
 ## library(systemPipeRdata)
 ## genWorkenvir(workflow="rnaseq", bam=TRUE)
 ## setwd("rnaseq")
+
+## ----download_latest, eval=FALSE-----------------------------------------
+## download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/06_RNAseq/systemPipeRNAseq.Rmd", "systemPipeRNAseq.Rmd")
 
 ## ----load_systempiper, eval=TRUE-----------------------------------------
 library(systemPipeR)
@@ -45,6 +49,15 @@ targets
 ## reg <- clusterRun(args, conffile=".BatchJobs.R", template="torque.tmpl", Njobs=18, runid="01",
 ##                   resourceList=resources)
 ## waitForJobs(reg)
+
+## ----rsubread, eval=FALSE------------------------------------------------
+## library(Rsubread)
+## args <- systemArgs(sysma="param/rsubread.param", mytargets="targets.txt")
+## buildindex(basename=reference(args), reference=reference(args)) # Build indexed reference genome
+## align(index=reference(args), readfile1=infile1(args), input_format="FASTQ",
+##       output_file=outfile1(args), output_format="SAM", nthreads=2)
+## for(i in seq(along=outfile1(args))) asBam(file=outfile1(args)[i], destination=gsub(".sam", "", outfile1(args)[i]), overwrite=TRUE, indexDestination=TRUE)
+## unlink(outfile1(args)); unlink(paste0(outfile1(args),".indel"))
 
 ## ----hisat2_alignment, eval=FALSE----------------------------------------
 ## args <- systemArgs(sysma="param/hisat2.param", mytargets="targets.txt")
@@ -198,11 +211,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## dev.off()
 
 ## ----render_report, eval=FALSE-------------------------------------------
-## rmarkdown::render("systemPipeRNAseq.Rmd", "html_document")
-## rmarkdown::render("systemPipeRNAseq.Rmd", "pdf_document")
-## 
-## # Version Information
-## 
+## rmarkdown::render("systemPipeRNAseq.Rmd", c("BiocStyle::html_document", "BiocStyle::pdf_document"))
 
 ## ----sessionInfo---------------------------------------------------------
 sessionInfo()

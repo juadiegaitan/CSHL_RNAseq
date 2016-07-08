@@ -51,6 +51,6 @@ biocVersion() # Note: this should return Bioc Version '3.3' or higher!!
 ```r
 source("http://bioconductor.org/biocLite.R")
 install.packages(c("ggplot2", "lattice", "ape", "gplots"))
-biocLite(c("BiocStyle", "ggbio", "ShortRead", "Biostrings", "IRanges", "BSgenome", "rtracklayer", "Rsamtools", "GenomicRanges", "GenomicAlignments", "DESeq2", "edgeR", "AnnotationDbi", "systemPipeR"))
+biocLite(c("BiocStyle", "ggbio", "ShortRead", "Biostrings", "IRanges", "BSgenome", "rtracklayer", "Rsamtools", "GenomicRanges", "GenomicAlignments", "DESeq2", "edgeR", "AnnotationDbi", "Rsubread", "systemPipeR"))
 biocLite("tgirke/systemPipeRdata", build_vignettes=TRUE, dependencies=TRUE)
 ```

@@ -386,7 +386,7 @@
 
 
 {
-"title": "Funding",
+"title": "Version Information",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/",
@@ -396,10 +396,20 @@
 
 
 {
-"title": "References",
+"title": "Funding",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_13/",
 "summary": ""
 },
 

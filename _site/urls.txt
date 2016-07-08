@@ -309,16 +309,23 @@ mydocmydoc_systemPipeRNAseq_10:
 
  
 mydocmydoc_systemPipeRNAseq_11:
-  title: "11. Funding"
+  title: "11. Version Information"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Version Information</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_12:
-  title: "12. References"
+  title: "12. Funding"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. Funding</a>
+
+
+ 
+mydocmydoc_systemPipeRNAseq_13:
+  title: "13. References"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_13/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_13/">13. References</a>
 
 
 

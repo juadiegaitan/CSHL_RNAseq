@@ -1,7 +1,7 @@
 ---
 title: Alignments
 keywords: 
-last_updated: Fri Jul  8 08:26:15 2016
+last_updated: Fri Jul  8 12:02:11 2016
 ---
 
 ## Read mapping with `Bowtie2/Tophat2`
@@ -26,6 +26,21 @@ resources <- list(walltime="20:00:00", nodes=paste0("1:ppn=", cores(args)), memo
 reg <- clusterRun(args, conffile=".BatchJobs.R", template="torque.tmpl", Njobs=18, runid="01", 
                   resourceList=resources)
 waitForJobs(reg)
+{% endhighlight %}
+
+## Alignment with `Rsubread`
+The following example shows how one can use within the `systemPipeR` environment the R-based
+aligner `Rsubread` or other R-based functions that read from input files and write to output files.
+
+
+{% highlight r %}
+library(Rsubread)
+args <- systemArgs(sysma="param/rsubread.param", mytargets="targets.txt")
+buildindex(basename=reference(args), reference=reference(args)) # Build indexed reference genome
+align(index=reference(args), readfile1=infile1(args), input_format="FASTQ",
+      output_file=outfile1(args), output_format="SAM", nthreads=2)
+for(i in seq(along=outfile1(args))) asBam(file=outfile1(args)[i], destination=gsub(".sam", "", outfile1(args)[i]), overwrite=TRUE, indexDestination=TRUE)
+unlink(outfile1(args)); unlink(paste0(outfile1(args),".indel"))
 {% endhighlight %}
 
 ## Read mapping with `HISAT2`

@@ -642,12 +642,17 @@ mydoc_systemPipeRNAseq_10:
   link: "<a href='../mydoc/mydoc_systemPipeRNAseq_10.html'>Render report in HTML and PDF format</a>"
 
 mydoc_systemPipeRNAseq_11:
-  title: "Funding"
+  title: "Version Information"
   url: "../mydoc/mydoc_systemPipeRNAseq_11.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_11.html'>Funding</a>"
+  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_11.html'>Version Information</a>"
 
 mydoc_systemPipeRNAseq_12:
-  title: "References"
+  title: "Funding"
   url: "../mydoc/mydoc_systemPipeRNAseq_12.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_12.html'>References</a>"
+  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_12.html'>Funding</a>"
+
+mydoc_systemPipeRNAseq_13:
+  title: "References"
+  url: "../mydoc/mydoc_systemPipeRNAseq_13.html"
+  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_13.html'>References</a>"
 

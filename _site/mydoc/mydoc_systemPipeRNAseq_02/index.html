@@ -549,14 +549,21 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Version Information</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. Funding</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_13/">13. References</a></li>
             
             
             
@@ -652,6 +659,12 @@ additional NGS applications will be provided in the future.</p>
 <span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">,</span> <span class="n">bam</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
 <span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span></code></pre></figure>
 
+<h2 id="download-latest-version-of-this-tutorial">Download latest version of this tutorial</h2>
+
+<p>In case there is an updated version of this tutorial, download its <code class="highlighter-rouge">systemPipeRNAseq.Rmd</code> source.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">download.file</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/06_RNAseq/systemPipeRNAseq.Rmd"</span><span class="p">,</span> <span class="s2">"systemPipeRNAseq.Rmd"</span><span class="p">)</span></code></pre></figure>
+
 <p>Now open the R markdown script <code class="highlighter-rouge">systemPipeRNAseq.Rmd</code>in your R IDE (<em>e.g.</em> vim-r or RStudio) and 
 run the workflow as outlined below.</p>
 
@@ -662,75 +675,10 @@ this report (Girke , 2014).</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: Rsamtools</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: methods</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: GenomeInfoDb</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: stats4</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: BiocGenerics</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: parallel</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 
-## Attaching package: 'BiocGenerics'</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:parallel':
-## 
-##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ, clusterExport, clusterMap,
-##     parApply, parCapply, parLapply, parLapplyLB, parRapply, parSapply, parSapplyLB</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:stats':
-## 
-##     IQR, mad, xtabs</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:base':
-## 
-##     anyDuplicated, append, as.data.frame, cbind, colnames, do.call, duplicated, eval,
-##     evalq, Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, lengths, Map,
-##     mapply, match, mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
-##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply, union, unique, unsplit</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: S4Vectors</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 
-## Attaching package: 'S4Vectors'</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:base':
-## 
-##     colMeans, colSums, expand.grid, rowMeans, rowSums</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: IRanges</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: GenomicRanges</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: Biostrings</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: XVector</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: ShortRead</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: BiocParallel</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: GenomicAlignments</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: SummarizedExperiment</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: Biobase</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Welcome to Bioconductor
-## 
-##     Vignettes contain introductory material; view with 'browseVignettes()'. To cite
-##     Bioconductor, see 'citation("Biobase")', and for packages 'citation("pkgname")'.</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## </code></pre></figure>
-
 <p>In the workflow environments generated by <code class="highlighter-rouge">genWorkenvir</code> all data
 inputs are stored in a <code class="highlighter-rouge">data/</code> directory and all analysis results will
 be written to a separate <code class="highlighter-rouge">results/</code> directory, while the
-<code class="highlighter-rouge">systemPipeRIBOseq.Rmd</code> script and the <code class="highlighter-rouge">targets</code> file are
+<code class="highlighter-rouge">systemPipeRNAseq.Rmd</code> script and the <code class="highlighter-rouge">targets</code> file are
 expected to be located in the parent directory. The R session is expected to
 run from this parent directory. Additional parameter files are stored under
 <code class="highlighter-rouge">param/</code>.</p>
@@ -790,7 +738,7 @@ comparisons of the analysis workflow.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Fri Jul  8 08:26:15 2016<br/> Site last generated: Jul 8, 2016 <br />
+<p>Page last updated:</span> Fri Jul  8 12:02:11 2016<br/> Site last generated: Jul 8, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

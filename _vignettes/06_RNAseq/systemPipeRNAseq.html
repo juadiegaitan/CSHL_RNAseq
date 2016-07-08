@@ -59,8 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
 <li><a href="#sample-definitions-and-environment-settings"><span class="toc-section-number">2</span> Sample definitions and environment settings</a><ul>
 <li><a href="#environment-settings-and-input-data"><span class="toc-section-number">2.1</span> Environment settings and input data</a></li>
-<li><a href="#required-packages-and-resources"><span class="toc-section-number">2.2</span> Required packages and resources</a></li>
-<li><a href="#experiment-definition-provided-by-targets-file"><span class="toc-section-number">2.3</span> Experiment definition provided by <code>targets</code> file</a></li>
+<li><a href="#download-latest-version-of-this-tutorial"><span class="toc-section-number">2.2</span> Download latest version of this tutorial</a></li>
+<li><a href="#required-packages-and-resources"><span class="toc-section-number">2.3</span> Required packages and resources</a></li>
+<li><a href="#experiment-definition-provided-by-targets-file"><span class="toc-section-number">2.4</span> Experiment definition provided by <code>targets</code> file</a></li>
 </ul></li>
 <li><a href="#read-preprocessing"><span class="toc-section-number">3</span> Read preprocessing</a><ul>
 <li><a href="#read-quality-filtering-and-trimming"><span class="toc-section-number">3.1</span> Read quality filtering and trimming</a></li>
@@ -68,9 +69,10 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul></li>
 <li><a href="#alignments"><span class="toc-section-number">4</span> Alignments</a><ul>
 <li><a href="#read-mapping-with-bowtie2tophat2"><span class="toc-section-number">4.1</span> Read mapping with <code>Bowtie2/Tophat2</code></a></li>
-<li><a href="#read-mapping-with-hisat2"><span class="toc-section-number">4.2</span> Read mapping with <code>HISAT2</code></a></li>
-<li><a href="#read-and-alignment-stats"><span class="toc-section-number">4.3</span> Read and alignment stats</a></li>
-<li><a href="#create-symbolic-links-for-viewing-bam-files-in-igv"><span class="toc-section-number">4.4</span> Create symbolic links for viewing BAM files in IGV</a></li>
+<li><a href="#alignment-with-rsubread"><span class="toc-section-number">4.2</span> Alignment with <code>Rsubread</code></a></li>
+<li><a href="#read-mapping-with-hisat2"><span class="toc-section-number">4.3</span> Read mapping with <code>HISAT2</code></a></li>
+<li><a href="#read-and-alignment-stats"><span class="toc-section-number">4.4</span> Read and alignment stats</a></li>
+<li><a href="#create-symbolic-links-for-viewing-bam-files-in-igv"><span class="toc-section-number">4.5</span> Create symbolic links for viewing BAM files in IGV</a></li>
 </ul></li>
 <li><a href="#read-distribution-across-genomic-features"><span class="toc-section-number">5</span> Read distribution across genomic features</a><ul>
 <li><a href="#obtain-feature-types"><span class="toc-section-number">5.1</span> Obtain feature types</a></li>
@@ -92,7 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul></li>
 <li><a href="#clustering-and-heat-maps"><span class="toc-section-number">9</span> Clustering and heat maps</a></li>
 <li><a href="#render-report-in-html-and-pdf-format"><span class="toc-section-number">10</span> Render report in HTML and PDF format</a></li>
-<li><a href="#funding"><span class="toc-section-number">11</span> Funding</a></li>
+<li><a href="#version-information"><span class="toc-section-number">11</span> Version Information</a></li>
+<li><a href="#funding"><span class="toc-section-number">12</span> Funding</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
@@ -147,60 +150,24 @@ document.addEventListener("DOMContentLoaded", function() {
 <pre class="r"><code>library(systemPipeRdata)
 genWorkenvir(workflow=&quot;rnaseq&quot;, bam=TRUE)
 setwd(&quot;rnaseq&quot;)</code></pre>
+</div>
+<div id="download-latest-version-of-this-tutorial" class="section level2">
+<h2><span class="header-section-number">2.2</span> Download latest version of this tutorial</h2>
+<p>In case there is an updated version of this tutorial, download its <code>systemPipeRNAseq.Rmd</code> source.</p>
+<pre class="r"><code>download.file(&quot;https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/06_RNAseq/systemPipeRNAseq.Rmd&quot;, &quot;systemPipeRNAseq.Rmd&quot;)</code></pre>
 <p>Now open the R markdown script <code>systemPipeRNAseq.Rmd</code>in your R IDE (<em>e.g.</em> vim-r or RStudio) and run the workflow as outlined below.</p>
 </div>
 <div id="required-packages-and-resources" class="section level2">
-<h2><span class="header-section-number">2.2</span> Required packages and resources</h2>
+<h2><span class="header-section-number">2.3</span> Required packages and resources</h2>
 <p>The <code>systemPipeR</code> package needs to be loaded to perform the analysis steps shown in this report <span class="citation">(Girke 2014)</span>.</p>
 <pre class="r"><code>library(systemPipeR)</code></pre>
-<pre><code>## Loading required package: Rsamtools</code></pre>
-<pre><code>## Loading required package: methods</code></pre>
-<pre><code>## Loading required package: GenomeInfoDb</code></pre>
-<pre><code>## Loading required package: stats4</code></pre>
-<pre><code>## Loading required package: BiocGenerics</code></pre>
-<pre><code>## Loading required package: parallel</code></pre>
-<pre><code>## 
-## Attaching package: 'BiocGenerics'</code></pre>
-<pre><code>## The following objects are masked from 'package:parallel':
-## 
-##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ, clusterExport, clusterMap,
-##     parApply, parCapply, parLapply, parLapplyLB, parRapply, parSapply, parSapplyLB</code></pre>
-<pre><code>## The following objects are masked from 'package:stats':
-## 
-##     IQR, mad, xtabs</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     anyDuplicated, append, as.data.frame, cbind, colnames, do.call, duplicated, eval,
-##     evalq, Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, lengths, Map,
-##     mapply, match, mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
-##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply, union, unique, unsplit</code></pre>
-<pre><code>## Loading required package: S4Vectors</code></pre>
-<pre><code>## 
-## Attaching package: 'S4Vectors'</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     colMeans, colSums, expand.grid, rowMeans, rowSums</code></pre>
-<pre><code>## Loading required package: IRanges</code></pre>
-<pre><code>## Loading required package: GenomicRanges</code></pre>
-<pre><code>## Loading required package: Biostrings</code></pre>
-<pre><code>## Loading required package: XVector</code></pre>
-<pre><code>## Loading required package: ShortRead</code></pre>
-<pre><code>## Loading required package: BiocParallel</code></pre>
-<pre><code>## Loading required package: GenomicAlignments</code></pre>
-<pre><code>## Loading required package: SummarizedExperiment</code></pre>
-<pre><code>## Loading required package: Biobase</code></pre>
-<pre><code>## Welcome to Bioconductor
-## 
-##     Vignettes contain introductory material; view with 'browseVignettes()'. To cite
-##     Bioconductor, see 'citation(&quot;Biobase&quot;)', and for packages 'citation(&quot;pkgname&quot;)'.</code></pre>
-<pre><code>## </code></pre>
-<p>In the workflow environments generated by <code>genWorkenvir</code> all data inputs are stored in a <code>data/</code> directory and all analysis results will be written to a separate <code>results/</code> directory, while the <code>systemPipeRIBOseq.Rmd</code> script and the <code>targets</code> file are expected to be located in the parent directory. The R session is expected to run from this parent directory. Additional parameter files are stored under <code>param/</code>.</p>
+<p>In the workflow environments generated by <code>genWorkenvir</code> all data inputs are stored in a <code>data/</code> directory and all analysis results will be written to a separate <code>results/</code> directory, while the <code>systemPipeRNAseq.Rmd</code> script and the <code>targets</code> file are expected to be located in the parent directory. The R session is expected to run from this parent directory. Additional parameter files are stored under <code>param/</code>.</p>
 <p>To work with real data, users want to organize their own data similarly and substitute all test data for their own data. To rerun an established workflow on new data, the initial <code>targets</code> file along with the corresponding FASTQ files are usually the only inputs the user needs to provide.</p>
 <p>If applicable users can load custom functions not provided by <code>systemPipeR</code>. Skip this step if this is not the case.</p>
 <pre class="r"><code>source(&quot;systemPipeRNAseq_Fct.R&quot;)</code></pre>
 </div>
 <div id="experiment-definition-provided-by-targets-file" class="section level2">
-<h2><span class="header-section-number">2.3</span> Experiment definition provided by <code>targets</code> file</h2>
+<h2><span class="header-section-number">2.4</span> Experiment definition provided by <code>targets</code> file</h2>
 <p>The <code>targets</code> file defines all FASTQ files and sample comparisons of the analysis workflow.</p>
 <pre class="r"><code>targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package=&quot;systemPipeR&quot;)
 targets &lt;- read.delim(targetspath, comment.char = &quot;#&quot;)[,1:4]
@@ -266,8 +233,19 @@ reg &lt;- clusterRun(args, conffile=&quot;.BatchJobs.R&quot;, template=&quot;tor
                   resourceList=resources)
 waitForJobs(reg)</code></pre>
 </div>
+<div id="alignment-with-rsubread" class="section level2">
+<h2><span class="header-section-number">4.2</span> Alignment with <code>Rsubread</code></h2>
+<p>The following example shows how one can use within the <code>systemPipeR</code> environment the R-based aligner <code>Rsubread</code> or other R-based functions that read from input files and write to output files.</p>
+<pre class="r"><code>library(Rsubread)
+args &lt;- systemArgs(sysma=&quot;param/rsubread.param&quot;, mytargets=&quot;targets.txt&quot;)
+buildindex(basename=reference(args), reference=reference(args)) # Build indexed reference genome
+align(index=reference(args), readfile1=infile1(args), input_format=&quot;FASTQ&quot;,
+      output_file=outfile1(args), output_format=&quot;SAM&quot;, nthreads=2)
+for(i in seq(along=outfile1(args))) asBam(file=outfile1(args)[i], destination=gsub(&quot;.sam&quot;, &quot;&quot;, outfile1(args)[i]), overwrite=TRUE, indexDestination=TRUE)
+unlink(outfile1(args)); unlink(paste0(outfile1(args),&quot;.indel&quot;))</code></pre>
+</div>
 <div id="read-mapping-with-hisat2" class="section level2">
-<h2><span class="header-section-number">4.2</span> Read mapping with <code>HISAT2</code></h2>
+<h2><span class="header-section-number">4.3</span> Read mapping with <code>HISAT2</code></h2>
 <pre class="r"><code>args &lt;- systemArgs(sysma=&quot;param/hisat2.param&quot;, mytargets=&quot;targets.txt&quot;)
 # args &lt;- systemArgs(sysma=&quot;param/hisat2.param&quot;, mytargets=&quot;targets_trim.txt&quot;)
 sysargs(args)[1] # Command-line parameters for first FASTQ file
@@ -278,7 +256,7 @@ runCommandline(args=args)</code></pre>
 <pre class="r"><code>file.exists(outpaths(args))</code></pre>
 </div>
 <div id="read-and-alignment-stats" class="section level2">
-<h2><span class="header-section-number">4.3</span> Read and alignment stats</h2>
+<h2><span class="header-section-number">4.4</span> Read and alignment stats</h2>
 <p>The following provides an overview of the number of reads in each sample and how many of them aligned to the reference.</p>
 <pre class="r"><code>read_statsDF &lt;- alignStats(args=args) 
 write.table(read_statsDF, &quot;results/alignStats.xls&quot;, row.names=FALSE, quote=FALSE, sep=&quot;\t&quot;)</code></pre>
@@ -290,7 +268,7 @@ write.table(read_statsDF, &quot;results/alignStats.xls&quot;, row.names=FALSE, q
 ## 4      A1B   188854 147768     78.24457         147768             78.24457</code></pre>
 </div>
 <div id="create-symbolic-links-for-viewing-bam-files-in-igv" class="section level2">
-<h2><span class="header-section-number">4.4</span> Create symbolic links for viewing BAM files in IGV</h2>
+<h2><span class="header-section-number">4.5</span> Create symbolic links for viewing BAM files in IGV</h2>
 <p>The <code>symLink2bam</code> function creates symbolic links to view the BAM alignment files in a genome browser such as IGV. The corresponding URLs are written to a file with a path specified under <code>urlfile</code> in the <code>results</code> directory.</p>
 <pre class="r"><code>symLink2bam(sysargs=args, htmldir=c(&quot;~/.html/&quot;, &quot;projects/tests/&quot;), 
             urlbase=&quot;http://biocluster.ucr.edu/~tgirke/&quot;, 
@@ -491,10 +469,10 @@ Figure 6: Heat Map with Hierarchical Clustering Dendrograms of DEGs
 </div>
 <div id="render-report-in-html-and-pdf-format" class="section level1">
 <h1><span class="header-section-number">10</span> Render report in HTML and PDF format</h1>
-<pre class="r"><code>rmarkdown::render(&quot;systemPipeRNAseq.Rmd&quot;, &quot;html_document&quot;)
-rmarkdown::render(&quot;systemPipeRNAseq.Rmd&quot;, &quot;pdf_document&quot;)
-
-# Version Information</code></pre>
+<pre class="r"><code>rmarkdown::render(&quot;systemPipeRNAseq.Rmd&quot;, c(&quot;BiocStyle::html_document&quot;, &quot;BiocStyle::pdf_document&quot;))</code></pre>
+</div>
+<div id="version-information" class="section level1">
+<h1><span class="header-section-number">11</span> Version Information</h1>
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>## R version 3.3.1 (2016-06-21)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
@@ -507,7 +485,7 @@ rmarkdown::render(&quot;systemPipeRNAseq.Rmd&quot;, &quot;pdf_document&quot;)
 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] parallel  stats4    methods   stats     graphics  utils     datasets  grDevices base     
+## [1] stats4    parallel  methods   stats     graphics  utils     datasets  grDevices base     
 ## 
 ## other attached packages:
 ##  [1] systemPipeR_1.6.2          ShortRead_1.30.0           GenomicAlignments_1.8.3   
@@ -534,7 +512,7 @@ rmarkdown::render(&quot;systemPipeRNAseq.Rmd&quot;, &quot;pdf_document&quot;)
 ## [57] AnnotationDbi_1.34.3   colorspace_1.2-6       knitr_1.13</code></pre>
 </div>
 <div id="funding" class="section level1">
-<h1><span class="header-section-number">11</span> Funding</h1>
+<h1><span class="header-section-number">12</span> Funding</h1>
 <p>This project was supported by funds from the National Institutes of Health (NIH).</p>
 </div>
 <div id="references" class="section level1 unnumbered">

@@ -1,7 +1,7 @@
 ---
 title: Clustering and heat maps
 keywords: 
-last_updated: Fri Jul  8 08:26:15 2016
+last_updated: Fri Jul  8 12:02:11 2016
 ---
 
 The following example performs hierarchical clustering on the `rlog`
