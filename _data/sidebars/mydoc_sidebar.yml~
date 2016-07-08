@@ -240,62 +240,6 @@ entries:
       version: all
       output: web
 
-  - title: NGS
-    audience: writers, designers
-    platform: all
-    product: all
-    version: all
-    output: web, pdf
-    folderitems:
-
-    - title: 1. Background
-      url: /mydoc/mydoc_systemPipeR_1/
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
-    - title: 2. Getting Started
-      url: /mydoc/mydoc_systemPipeR_2/
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
-    - title: 3. More detail
-      url: /mydoc/mydoc_systemPipeR_3/
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
-    - title: 4. Workflow demo
-      url: /mydoc/mydoc_systemPipeR_4/
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
-    - title: 5. Version information
-      url: /mydoc/mydoc_systemPipeR_5/
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
-    - title: 6. References
-      url: /mydoc/mydoc_systemPipeR_6/
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
   - title: NGS Workflow Overview
     audience: writers, designers
     platform: all
@@ -346,6 +290,110 @@ entries:
 
     - title: 6. References
       url: /mydoc/mydoc_systemPipeR_6/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+  - title: RNA-Seq
+    audience: writers, designers
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    folderitems:
+
+    - title: 1. Introduction
+      url: /mydoc/mydoc_systemPipeRNAseq_01/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 2. Sample definitions and environment settings
+      url: /mydoc/mydoc_systemPipeRNAseq_02/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 3. Read preprocessing
+      url: /mydoc/mydoc_systemPipeRNAseq_03/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 4. Alignments
+      url: /mydoc/mydoc_systemPipeRNAseq_04/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 5. Read distribution across genomic features
+      url: /mydoc/mydoc_systemPipeRNAseq_05/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 6. Read quantification per annotation range
+      url: /mydoc/mydoc_systemPipeRNAseq_06/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 7. Analysis of differentially expressed genes with edgeR 
+      url: /mydoc/mydoc_systemPipeRNAseq_07/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 8. GO term enrichment analysis of DEGs
+      url: /mydoc/mydoc_systemPipeRNAseq_08/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 9. Clustering and heat maps
+      url: /mydoc/mydoc_systemPipeRNAseq_09/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 10. Render report in HTML and PDF format
+      url: /mydoc/mydoc_systemPipeRNAseq_10/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 11. Funding
+      url: /mydoc/mydoc_systemPipeRNAseq_11/
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: 12. References
+      url: /mydoc/mydoc_systemPipeRNAseq_12/
       audience: writers, designers
       platform: all
       product: all

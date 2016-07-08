@@ -1,7 +1,7 @@
 ---
 title: Read preprocessing
 keywords: 
-last_updated: Mon Jul  4 15:49:28 2016
+last_updated: Thu Jul  7 18:05:45 2016
 ---
 
 ## Read quality filtering and trimming
@@ -36,9 +36,9 @@ written to a PDF file named `fastqReport.pdf`.
 
 
 {% highlight r %}
-args <- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
+args <- systemArgs(sysma=NULL, mytargets="targets.txt")
 fqlist <- seeFastq(fastq=infile1(args), batchsize=100000, klength=8)
-pdf("./results/fastqReport.pdf", height=18, width=4*length(fqlist))
+png("./results/fastqReport.png", height=18, width=4*length(fqlist), units="in", res=72)
 seeFastqPlot(fqlist)
 dev.off()
 {% endhighlight %}

@@ -1,7 +1,7 @@
 ---
 title: Alignments
 keywords: 
-last_updated: Mon Jul  4 15:49:28 2016
+last_updated: Thu Jul  7 18:05:45 2016
 ---
 
 ## Read mapping with `Bowtie2/Tophat2`
@@ -80,9 +80,8 @@ with a path specified under `urlfile` in the `results` directory.
 
 
 {% highlight r %}
-symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"), 
+symLink2bam(sysargs=args, htmldir=c("~/.html/", "projects/tests/"), 
             urlbase="http://biocluster.ucr.edu/~tgirke/", 
-	        urlfile="./results/IGVurl.txt")
+            urlfile="./results/IGVurl.txt")
 {% endhighlight %}
-
 

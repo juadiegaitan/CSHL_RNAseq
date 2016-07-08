@@ -28,9 +28,9 @@ targets
 ## writeTargetsout(x=args, file="targets_trim.txt", overwrite=TRUE)
 
 ## ----fastq_report, eval=FALSE--------------------------------------------
-## args <- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
+## args <- systemArgs(sysma=NULL, mytargets="targets.txt")
 ## fqlist <- seeFastq(fastq=infile1(args), batchsize=100000, klength=8)
-## pdf("./results/fastqReport.pdf", height=18, width=4*length(fqlist))
+## png("./results/fastqReport.png", height=18, width=4*length(fqlist), units="in", res=72)
 ## seeFastqPlot(fqlist)
 ## dev.off()
 
@@ -65,9 +65,22 @@ targets
 read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), header=TRUE)[1:4,]
 
 ## ----bam_urls, eval=FALSE------------------------------------------------
-## symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"),
+## symLink2bam(sysargs=args, htmldir=c("~/.html/", "projects/tests/"),
 ##             urlbase="http://biocluster.ucr.edu/~tgirke/",
-## 	        urlfile="./results/IGVurl.txt")
+##             urlfile="./results/IGVurl.txt")
+
+## ----genFeatures, eval=FALSE---------------------------------------------
+## library(GenomicFeatures)
+## txdb <- makeTxDbFromGFF(file="data/tair10.gff", format="gff3", organism="Arabidopsis")
+## feat <- genFeatures(txdb, featuretype="all", reduce_ranges=TRUE, upstream=1000, downstream=0,
+##                     verbose=TRUE)
+
+## ----featuretypeCounts, eval=FALSE---------------------------------------
+## library(ggplot2); library(grid)
+## fc <- featuretypeCounts(bfl=BamFileList(outpaths(args), yieldSize=50000), grl=feat,
+##                         singleEnd=TRUE, readlength=NULL, type="data.frame")
+## p <- plotfeaturetypeCounts(x=fc, graphicsfile="results/featureCounts.png", graphicsformat="png",
+##                            scales="fixed", anyreadlength=TRUE, scale_length_val=NULL)
 
 ## ----read_counting1, eval=FALSE------------------------------------------
 ## library("GenomicFeatures"); library(BiocParallel)
@@ -101,7 +114,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## dds <- DESeqDataSetFromMatrix(countData = countDF, colData = colData, design = ~ condition)
 ## d <- cor(assay(rlog(dds)), method="spearman")
 ## hc <- hclust(dist(1-d))
-## pdf("results/sample_tree.pdf")
+## png("results/sample_tree.pdf")
 ## plot.phylo(as.phylo(hc), type="p", edge.col="blue", edge.width=2, show.node.label=TRUE, no.margin=TRUE)
 ## dev.off()
 
@@ -123,7 +136,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 
 ## ----filter_degs, eval=FALSE---------------------------------------------
 ## edgeDF <- read.delim("results/edgeRglm_allcomp.xls", row.names=1, check.names=FALSE)
-## pdf("results/DEGcounts.pdf")
+## png("./results/DEGcounts.png", height=10, width=10, units="in", res=72)
 ## DEG_list <- filterDEGs(degDF=edgeDF, filter=c(Fold=2, FDR=20))
 ## dev.off()
 ## write.table(DEG_list$Summary, "./results/DEGcounts.xls", quote=FALSE, sep="\t", row.names=FALSE)
@@ -131,7 +144,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## ----venn_diagram, eval=FALSE--------------------------------------------
 ## vennsetup <- overLapper(DEG_list$Up[6:9], type="vennsets")
 ## vennsetdown <- overLapper(DEG_list$Down[6:9], type="vennsets")
-## pdf("results/vennplot.pdf")
+## pdf("results/vennplot.png")
 ## vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
 ## dev.off()
 
@@ -170,7 +183,9 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## ----go_plot, eval=FALSE-------------------------------------------------
 ## gos <- BatchResultslim[grep("M6-V6_up_down", BatchResultslim$CLID), ]
 ## gos <- BatchResultslim
-## pdf("GOslimbarplotMF.pdf", height=8, width=10); goBarplot(gos, gocat="MF"); dev.off()
+## png("./results/GOslimbarplotMF.png", height=12, width=12, units="in", res=72)
+## goBarplot(gos, gocat="MF")
+## dev.off()
 ## goBarplot(gos, gocat="BP")
 ## goBarplot(gos, gocat="CC")
 
@@ -178,7 +193,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## library(pheatmap)
 ## geneids <- unique(as.character(unlist(DEG_list[[1]])))
 ## y <- assay(rlog(dds))[geneids, ]
-## pdf("heatmap1.pdf")
+## png("heatmap1.png")
 ## pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
 ## dev.off()
 

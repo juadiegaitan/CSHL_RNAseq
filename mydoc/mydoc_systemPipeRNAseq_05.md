@@ -1,82 +1,52 @@
 ---
-title: Read quantification per annotation range
+title: Read distribution across genomic features
 keywords: 
-last_updated: Mon Jul  4 15:49:28 2016
+last_updated: Thu Jul  7 18:05:45 2016
 ---
 
-## Read counting with `summarizeOverlaps` in parallel mode using multiple cores
+The `genFeatures` function generates a variety of feature types from
+`TxDb` objects using utilities provided by the `GenomicFeatures` package. 
 
-Reads overlapping with annotation ranges of interest are counted for
-each sample using the `summarizeOverlaps` function (Lawrence et al., 2013). The read counting is
-preformed for exonic gene regions in a non-strand-specific manner while
-ignoring overlaps among different genes. Subsequently, the expression
-count values are normalized by *reads per kp per million mapped reads*
-(RPKM). The raw read count table (`countDFeByg.xls`) and the correspoding 
-RPKM table (`rpkmDFeByg.xls`) are written
-to separate files in the directory of this project. Parallelization is
-achieved with the `BiocParallel` package, here using 8 CPU cores.
+## Obtain feature types
 
-
-{% highlight r %}
-library("GenomicFeatures"); library(BiocParallel)
-txdb <- makeTxDbFromGFF(file="data/tair10.gff", format="gff", dataSource="TAIR", organism="Arabidopsis thaliana")
-saveDb(txdb, file="./data/tair10.sqlite")
-txdb <- loadDb("./data/tair10.sqlite")
-(align <- readGAlignments(outpaths(args)[1])) # Demonstrates how to read bam file into R
-eByg <- exonsBy(txdb, by=c("gene"))
-bfl <- BamFileList(outpaths(args), yieldSize=50000, index=character())
-multicoreParam <- MulticoreParam(workers=2); register(multicoreParam); registered()
-counteByg <- bplapply(bfl, function(x) summarizeOverlaps(eByg, x, mode="Union", 
-                                               ignore.strand=TRUE, 
-                                               inter.feature=FALSE, 
-                                               singleEnd=TRUE)) 
-countDFeByg <- sapply(seq(along=counteByg), function(x) assays(counteByg[[x]])$counts)
-rownames(countDFeByg) <- names(rowRanges(counteByg[[1]])); colnames(countDFeByg) <- names(bfl)
-rpkmDFeByg <- apply(countDFeByg, 2, function(x) returnRPKM(counts=x, ranges=eByg))
-write.table(countDFeByg, "results/countDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
-write.table(rpkmDFeByg, "results/rpkmDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
-{% endhighlight %}
-
-Sample of data slice of count table
-
-{% highlight r %}
-read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE)[1:4,1:5]
-{% endhighlight %}
-
-Sample of data slice of RPKM table
+The first step is the generation of the feature type ranges based on
+annotations provided by a GFF file that can be transformed into a
+`TxDb` object. This includes ranges for mRNAs, exons, introns, UTRs,
+CDSs, miRNAs, rRNAs, tRNAs, promoter and intergenic regions. In addition, any
+number of custom annotations can be included in this routine.
 
 
 {% highlight r %}
-read.delim("results/rpkmDFeByg.xls", row.names=1, check.names=FALSE)[1:4,1:4]
+library(GenomicFeatures)
+txdb <- makeTxDbFromGFF(file="data/tair10.gff", format="gff3", organism="Arabidopsis")
+feat <- genFeatures(txdb, featuretype="all", reduce_ranges=TRUE, upstream=1000, downstream=0, 
+                    verbose=TRUE)
 {% endhighlight %}
 
-Note, for most statistical differential expression or abundance analysis
-methods, such as `edgeR` or `DESeq2`, the raw count values should be used as input. The
-usage of RPKM values should be restricted to specialty applications
-required by some users, *e.g.* manually comparing the expression levels
-among different genes or features.
+## Count reads and plot results
+The `featuretypeCounts` function counts how many reads in short read
+alignment files (BAM format) overlap with entire annotation categories. This
+utility is useful for analyzing the distribution of the read mappings across
+feature types, _e.g._ coding versus non-coding genes. By default the
+read counts are reported for the sense and antisense strand of each feature
+type separately. To minimize memory consumption, the BAM files are processed in
+a stream using utilities from the `Rsamtools` and
+`GenomicAlignment` packages.  The counts can be reported for each read
+length separately or as a single value for reads of any length.  Subsequently,
+the counting results can be plotted with the associated
+`plotfeaturetypeCounts` function.
 
-## Sample-wise correlation analysis
-
-The following computes the sample-wise Spearman correlation coefficients from
-the `rlog` transformed expression values generated with the `DESeq2` package. After
-transformation to a distance matrix, hierarchical clustering is performed with
-the `hclust` function and the result is plotted as a dendrogram
-(also see file `sample_tree.pdf`).
+The following generates and plots feature counts for any read length.
 
 
 {% highlight r %}
-library(DESeq2, quietly=TRUE); library(ape,  warn.conflicts=FALSE)
-countDF <- as.matrix(read.table("./results/countDFeByg.xls"))
-colData <- data.frame(row.names=targetsin(args)$SampleName, condition=targetsin(args)$Factor)
-dds <- DESeqDataSetFromMatrix(countData = countDF, colData = colData, design = ~ condition)
-d <- cor(assay(rlog(dds)), method="spearman")
-hc <- hclust(dist(1-d))
-pdf("results/sample_tree.pdf")
-plot.phylo(as.phylo(hc), type="p", edge.col="blue", edge.width=2, show.node.label=TRUE, no.margin=TRUE)
-dev.off()
+library(ggplot2); library(grid)
+fc <- featuretypeCounts(bfl=BamFileList(outpaths(args), yieldSize=50000), grl=feat, 
+                        singleEnd=TRUE, readlength=NULL, type="data.frame")
+p <- plotfeaturetypeCounts(x=fc, graphicsfile="results/featureCounts.png", graphicsformat="png", 
+                           scales="fixed", anyreadlength=TRUE, scale_length_val=NULL)
 {% endhighlight %}
 
-![](../systemPipeRNAseq_files/sample_tree.png)
-<div align="center">Figure 2: Correlation dendrogram of samples</div>
+![](../systemPipeRNAseq_files/featureCounts.png)
+<div align="center">Figure 2: Read distribution plot across annotation features for any read length.</div>
 

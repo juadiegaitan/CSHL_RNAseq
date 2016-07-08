@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Read quantification per annotation range  | Manual</title>
+<title>Read distribution across genomic features  | Manual</title>
 <link rel="stylesheet" href="/CSHL_RNAseq/css/syntax.css">
 
 
@@ -141,7 +141,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Manual feedback";
-var body = "I have some feedback about the Read quantification per annotation range page: ";
+var body = "I have some feedback about the Read distribution across genomic features page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:thomas.girke@ucr.edu?subject=";
@@ -168,7 +168,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CSHL_RNAseq/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Read quantification per annotation range">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Read distribution across genomic features">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -507,49 +507,56 @@ window.location.href = uri;
             
             
             
-            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read quantification per annotation range</a></li>
+            <li class="active"><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read distribution across genomic features</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Analysis of differentially expressed genes with edgeR</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Read quantification per annotation range</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. GO term enrichment analysis of DEGs</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. Analysis of differentially expressed genes with edgeR</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. Clustering and heat maps</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. GO term enrichment analysis of DEGs</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Clustering and heat maps</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Funding</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Render report in HTML and PDF format</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. References</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a></li>
             
             
             
@@ -572,7 +579,7 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Read quantification per annotation range</h1>
+   <h1 class="post-title-main">Read distribution across genomic features</h1>
 </div>
 
 
@@ -612,70 +619,45 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="read-counting-with-summarizeoverlaps-in-parallel-mode-using-multiple-cores">Read counting with <code class="highlighter-rouge">summarizeOverlaps</code> in parallel mode using multiple cores</h2>
+  <p>The <code class="highlighter-rouge">genFeatures</code> function generates a variety of feature types from
+<code class="highlighter-rouge">TxDb</code> objects using utilities provided by the <code class="highlighter-rouge">GenomicFeatures</code> package.</p>
 
-<p>Reads overlapping with annotation ranges of interest are counted for
-each sample using the <code class="highlighter-rouge">summarizeOverlaps</code> function (Lawrence et al., 2013). The read counting is
-preformed for exonic gene regions in a non-strand-specific manner while
-ignoring overlaps among different genes. Subsequently, the expression
-count values are normalized by <em>reads per kp per million mapped reads</em>
-(RPKM). The raw read count table (<code class="highlighter-rouge">countDFeByg.xls</code>) and the correspoding 
-RPKM table (<code class="highlighter-rouge">rpkmDFeByg.xls</code>) are written
-to separate files in the directory of this project. Parallelization is
-achieved with the <code class="highlighter-rouge">BiocParallel</code> package, here using 8 CPU cores.</p>
+<h2 id="obtain-feature-types">Obtain feature types</h2>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="s2">"GenomicFeatures"</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">)</span>
-<span class="n">txdb</span> <span class="o">&lt;-</span> <span class="n">makeTxDbFromGFF</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"data/tair10.gff"</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"gff"</span><span class="p">,</span> <span class="n">dataSource</span><span class="o">=</span><span class="s2">"TAIR"</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s2">"Arabidopsis thaliana"</span><span class="p">)</span>
-<span class="n">saveDb</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s2">"./data/tair10.sqlite"</span><span class="p">)</span>
-<span class="n">txdb</span> <span class="o">&lt;-</span> <span class="n">loadDb</span><span class="p">(</span><span class="s2">"./data/tair10.sqlite"</span><span class="p">)</span>
-<span class="p">(</span><span class="n">align</span> <span class="o">&lt;-</span> <span class="n">readGAlignments</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]))</span> <span class="c1"># Demonstrates how to read bam file into R
-</span><span class="n">eByg</span> <span class="o">&lt;-</span> <span class="n">exonsBy</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"gene"</span><span class="p">))</span>
-<span class="n">bfl</span> <span class="o">&lt;-</span> <span class="n">BamFileList</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">yieldSize</span><span class="o">=</span><span class="m">50000</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">character</span><span class="p">())</span>
-<span class="n">multicoreParam</span> <span class="o">&lt;-</span> <span class="n">MulticoreParam</span><span class="p">(</span><span class="n">workers</span><span class="o">=</span><span class="m">2</span><span class="p">);</span> <span class="n">register</span><span class="p">(</span><span class="n">multicoreParam</span><span class="p">);</span> <span class="n">registered</span><span class="p">()</span>
-<span class="n">counteByg</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">bfl</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">summarizeOverlaps</span><span class="p">(</span><span class="n">eByg</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"Union"</span><span class="p">,</span> 
-                                               <span class="n">ignore.strand</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> 
-                                               <span class="n">inter.feature</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> 
-                                               <span class="n">singleEnd</span><span class="o">=</span><span class="n">TRUE</span><span class="p">))</span> 
-<span class="n">countDFeByg</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">counteByg</span><span class="p">),</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">assays</span><span class="p">(</span><span class="n">counteByg</span><span class="p">[[</span><span class="n">x</span><span class="p">]])</span><span class="o">$</span><span class="n">counts</span><span class="p">)</span>
-<span class="n">rownames</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">rowRanges</span><span class="p">(</span><span class="n">counteByg</span><span class="p">[[</span><span class="m">1</span><span class="p">]]));</span> <span class="n">colnames</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">bfl</span><span class="p">)</span>
-<span class="n">rpkmDFeByg</span> <span class="o">&lt;-</span> <span class="n">apply</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">returnRPKM</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">ranges</span><span class="o">=</span><span class="n">eByg</span><span class="p">))</span>
-<span class="n">write.table</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">,</span> <span class="s2">"results/countDFeByg.xls"</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">NA</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
-<span class="n">write.table</span><span class="p">(</span><span class="n">rpkmDFeByg</span><span class="p">,</span> <span class="s2">"results/rpkmDFeByg.xls"</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">NA</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span></code></pre></figure>
+<p>The first step is the generation of the feature type ranges based on
+annotations provided by a GFF file that can be transformed into a
+<code class="highlighter-rouge">TxDb</code> object. This includes ranges for mRNAs, exons, introns, UTRs,
+CDSs, miRNAs, rRNAs, tRNAs, promoter and intergenic regions. In addition, any
+number of custom annotations can be included in this routine.</p>
 
-<p>Sample of data slice of count table</p>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">GenomicFeatures</span><span class="p">)</span>
+<span class="n">txdb</span> <span class="o">&lt;-</span> <span class="n">makeTxDbFromGFF</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"data/tair10.gff"</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"gff3"</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s2">"Arabidopsis"</span><span class="p">)</span>
+<span class="n">feat</span> <span class="o">&lt;-</span> <span class="n">genFeatures</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">featuretype</span><span class="o">=</span><span class="s2">"all"</span><span class="p">,</span> <span class="n">reduce_ranges</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">upstream</span><span class="o">=</span><span class="m">1000</span><span class="p">,</span> <span class="n">downstream</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> 
+                    <span class="n">verbose</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">read.delim</span><span class="p">(</span><span class="s2">"results/countDFeByg.xls"</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">check.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span></code></pre></figure>
+<h2 id="count-reads-and-plot-results">Count reads and plot results</h2>
+<p>The <code class="highlighter-rouge">featuretypeCounts</code> function counts how many reads in short read
+alignment files (BAM format) overlap with entire annotation categories. This
+utility is useful for analyzing the distribution of the read mappings across
+feature types, <em>e.g.</em> coding versus non-coding genes. By default the
+read counts are reported for the sense and antisense strand of each feature
+type separately. To minimize memory consumption, the BAM files are processed in
+a stream using utilities from the <code class="highlighter-rouge">Rsamtools</code> and
+<code class="highlighter-rouge">GenomicAlignment</code> packages.  The counts can be reported for each read
+length separately or as a single value for reads of any length.  Subsequently,
+the counting results can be plotted with the associated
+<code class="highlighter-rouge">plotfeaturetypeCounts</code> function.</p>
 
-<p>Sample of data slice of RPKM table</p>
+<p>The following generates and plots feature counts for any read length.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">read.delim</span><span class="p">(</span><span class="s2">"results/rpkmDFeByg.xls"</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">check.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+<span class="n">fc</span> <span class="o">&lt;-</span> <span class="n">featuretypeCounts</span><span class="p">(</span><span class="n">bfl</span><span class="o">=</span><span class="n">BamFileList</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">yieldSize</span><span class="o">=</span><span class="m">50000</span><span class="p">),</span> <span class="n">grl</span><span class="o">=</span><span class="n">feat</span><span class="p">,</span> 
+                        <span class="n">singleEnd</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">readlength</span><span class="o">=</span><span class="n">NULL</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"data.frame"</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="n">plotfeaturetypeCounts</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fc</span><span class="p">,</span> <span class="n">graphicsfile</span><span class="o">=</span><span class="s2">"results/featureCounts.png"</span><span class="p">,</span> <span class="n">graphicsformat</span><span class="o">=</span><span class="s2">"png"</span><span class="p">,</span> 
+                           <span class="n">scales</span><span class="o">=</span><span class="s2">"fixed"</span><span class="p">,</span> <span class="n">anyreadlength</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">scale_length_val</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span></code></pre></figure>
 
-<p>Note, for most statistical differential expression or abundance analysis
-methods, such as <code class="highlighter-rouge">edgeR</code> or <code class="highlighter-rouge">DESeq2</code>, the raw count values should be used as input. The
-usage of RPKM values should be restricted to specialty applications
-required by some users, <em>e.g.</em> manually comparing the expression levels
-among different genes or features.</p>
-
-<h2 id="sample-wise-correlation-analysis">Sample-wise correlation analysis</h2>
-
-<p>The following computes the sample-wise Spearman correlation coefficients from
-the <code class="highlighter-rouge">rlog</code> transformed expression values generated with the <code class="highlighter-rouge">DESeq2</code> package. After
-transformation to a distance matrix, hierarchical clustering is performed with
-the <code class="highlighter-rouge">hclust</code> function and the result is plotted as a dendrogram
-(also see file <code class="highlighter-rouge">sample_tree.pdf</code>).</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">DESeq2</span><span class="p">,</span> <span class="n">quietly</span><span class="o">=</span><span class="n">TRUE</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">ape</span><span class="p">,</span>  <span class="n">warn.conflicts</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
-<span class="n">countDF</span> <span class="o">&lt;-</span> <span class="n">as.matrix</span><span class="p">(</span><span class="n">read.table</span><span class="p">(</span><span class="s2">"./results/countDFeByg.xls"</span><span class="p">))</span>
-<span class="n">colData</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">row.names</span><span class="o">=</span><span class="n">targetsin</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">$</span><span class="n">SampleName</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">targetsin</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">$</span><span class="n">Factor</span><span class="p">)</span>
-<span class="n">dds</span> <span class="o">&lt;-</span> <span class="n">DESeqDataSetFromMatrix</span><span class="p">(</span><span class="n">countData</span> <span class="o">=</span> <span class="n">countDF</span><span class="p">,</span> <span class="n">colData</span> <span class="o">=</span> <span class="n">colData</span><span class="p">,</span> <span class="n">design</span> <span class="o">=</span> <span class="o">~</span> <span class="n">condition</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">&lt;-</span> <span class="n">cor</span><span class="p">(</span><span class="n">assay</span><span class="p">(</span><span class="n">rlog</span><span class="p">(</span><span class="n">dds</span><span class="p">)),</span> <span class="n">method</span><span class="o">=</span><span class="s2">"spearman"</span><span class="p">)</span>
-<span class="n">hc</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">dist</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
-<span class="n">pdf</span><span class="p">(</span><span class="s2">"results/sample_tree.pdf"</span><span class="p">)</span>
-<span class="n">plot.phylo</span><span class="p">(</span><span class="n">as.phylo</span><span class="p">(</span><span class="n">hc</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s2">"p"</span><span class="p">,</span> <span class="n">edge.col</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">edge.width</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">show.node.label</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">no.margin</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
-<span class="n">dev.off</span><span class="p">()</span></code></pre></figure>
-
-<p><img src="../systemPipeRNAseq_files/sample_tree.png" alt="" /></p>
-<div align="center">Figure 2: Correlation dendrogram of samples</div>
+<p><img src="../systemPipeRNAseq_files/featureCounts.png" alt="" /></p>
+<div align="center">Figure 2: Read distribution plot across annotation features for any read length.</div>
 
 
 
@@ -693,7 +675,7 @@ the <code class="highlighter-rouge">hclust</code> function and the result is plo
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Mon Jul  4 15:49:28 2016<br/> Site last generated: Jul 7, 2016 <br />
+<p>Page last updated:</span> Thu Jul  7 18:05:45 2016<br/> Site last generated: Jul 7, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

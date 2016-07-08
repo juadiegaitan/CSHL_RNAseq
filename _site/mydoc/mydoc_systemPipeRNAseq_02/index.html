@@ -507,49 +507,56 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read quantification per annotation range</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read distribution across genomic features</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Analysis of differentially expressed genes with edgeR</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Read quantification per annotation range</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. GO term enrichment analysis of DEGs</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. Analysis of differentially expressed genes with edgeR</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. Clustering and heat maps</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. GO term enrichment analysis of DEGs</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Clustering and heat maps</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Funding</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Render report in HTML and PDF format</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. References</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a></li>
             
             
             
@@ -655,6 +662,71 @@ this report (Girke , 2014).</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span></code></pre></figure>
 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: Rsamtools</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: methods</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: GenomeInfoDb</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: stats4</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: BiocGenerics</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: parallel</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 
+## Attaching package: 'BiocGenerics'</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:parallel':
+## 
+##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ, clusterExport, clusterMap,
+##     parApply, parCapply, parLapply, parLapplyLB, parRapply, parSapply, parSapplyLB</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:stats':
+## 
+##     IQR, mad, xtabs</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:base':
+## 
+##     anyDuplicated, append, as.data.frame, cbind, colnames, do.call, duplicated, eval,
+##     evalq, Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, lengths, Map,
+##     mapply, match, mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply, union, unique, unsplit</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: S4Vectors</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 
+## Attaching package: 'S4Vectors'</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## The following objects are masked from 'package:base':
+## 
+##     colMeans, colSums, expand.grid, rowMeans, rowSums</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: IRanges</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: GenomicRanges</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: Biostrings</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: XVector</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: ShortRead</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: BiocParallel</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: GenomicAlignments</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: SummarizedExperiment</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: Biobase</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Welcome to Bioconductor
+## 
+##     Vignettes contain introductory material; view with 'browseVignettes()'. To cite
+##     Bioconductor, see 'citation("Biobase")', and for packages 'citation("pkgname")'.</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## </code></pre></figure>
+
 <p>In the workflow environments generated by <code class="highlighter-rouge">genWorkenvir</code> all data
 inputs are stored in a <code class="highlighter-rouge">data/</code> directory and all analysis results will
 be written to a separate <code class="highlighter-rouge">results/</code> directory, while the
@@ -718,7 +790,7 @@ comparisons of the analysis workflow.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Mon Jul  4 15:49:28 2016<br/> Site last generated: Jul 7, 2016 <br />
+<p>Page last updated:</span> Thu Jul  7 18:05:45 2016<br/> Site last generated: Jul 7, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

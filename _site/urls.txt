@@ -267,51 +267,58 @@ mydocmydoc_systemPipeRNAseq_04:
 
  
 mydocmydoc_systemPipeRNAseq_05:
-  title: "5. Read quantification per annotation range"
+  title: "5. Read distribution across genomic features"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read quantification per annotation range</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read distribution across genomic features</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_06:
-  title: "6. Analysis of differentially expressed genes with edgeR"
+  title: "6. Read quantification per annotation range"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Analysis of differentially expressed genes with edgeR</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Read quantification per annotation range</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_07:
-  title: "7. GO term enrichment analysis of DEGs"
+  title: "7. Analysis of differentially expressed genes with edgeR"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. GO term enrichment analysis of DEGs</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. Analysis of differentially expressed genes with edgeR</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_08:
-  title: "8. Clustering and heat maps"
+  title: "8. GO term enrichment analysis of DEGs"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. Clustering and heat maps</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. GO term enrichment analysis of DEGs</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_09:
-  title: "9. Render report in HTML and PDF format"
+  title: "9. Clustering and heat maps"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Clustering and heat maps</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_10:
-  title: "10. Funding"
+  title: "10. Render report in HTML and PDF format"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Funding</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Render report in HTML and PDF format</a>
 
 
  
 mydocmydoc_systemPipeRNAseq_11:
-  title: "11. References"
+  title: "11. Funding"
   url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/
-  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. References</a>
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a>
+
+
+ 
+mydocmydoc_systemPipeRNAseq_12:
+  title: "12. References"
+  url: /CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/
+  link: <a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a>
 
 
 

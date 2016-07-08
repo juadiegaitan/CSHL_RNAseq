@@ -1,75 +1,82 @@
 ---
-title: Analysis of differentially expressed genes with edgeR 
+title: Read quantification per annotation range
 keywords: 
-last_updated: Mon Jul  4 15:49:28 2016
+last_updated: Thu Jul  7 18:05:45 2016
 ---
 
-The analysis of differentially expressed genes (DEGs) is performed with
-the glm method of the `edgeR` package (Robinson et al., 2010). The sample
-comparisons used by this analysis are defined in the header lines of the 
-`targets.txt` file starting with `<CMP>`.
+## Read counting with `summarizeOverlaps` in parallel mode using multiple cores
 
-
-## Run `edgeR`
+Reads overlapping with annotation ranges of interest are counted for
+each sample using the `summarizeOverlaps` function (Lawrence et al., 2013). The read counting is
+preformed for exonic gene regions in a non-strand-specific manner while
+ignoring overlaps among different genes. Subsequently, the expression
+count values are normalized by *reads per kp per million mapped reads*
+(RPKM). The raw read count table (`countDFeByg.xls`) and the correspoding 
+RPKM table (`rpkmDFeByg.xls`) are written
+to separate files in the directory of this project. Parallelization is
+achieved with the `BiocParallel` package, here using 8 CPU cores.
 
 
 {% highlight r %}
-library(edgeR)
-countDF <- read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE) 
-targets <- read.delim("targets.txt", comment="#")
-cmp <- readComp(file="targets.txt", format="matrix", delim="-")
-edgeDF <- run_edgeR(countDF=countDF, targets=targets, cmp=cmp[[1]], independent=FALSE, mdsplot="")
+library("GenomicFeatures"); library(BiocParallel)
+txdb <- makeTxDbFromGFF(file="data/tair10.gff", format="gff", dataSource="TAIR", organism="Arabidopsis thaliana")
+saveDb(txdb, file="./data/tair10.sqlite")
+txdb <- loadDb("./data/tair10.sqlite")
+(align <- readGAlignments(outpaths(args)[1])) # Demonstrates how to read bam file into R
+eByg <- exonsBy(txdb, by=c("gene"))
+bfl <- BamFileList(outpaths(args), yieldSize=50000, index=character())
+multicoreParam <- MulticoreParam(workers=2); register(multicoreParam); registered()
+counteByg <- bplapply(bfl, function(x) summarizeOverlaps(eByg, x, mode="Union", 
+                                               ignore.strand=TRUE, 
+                                               inter.feature=FALSE, 
+                                               singleEnd=TRUE)) 
+countDFeByg <- sapply(seq(along=counteByg), function(x) assays(counteByg[[x]])$counts)
+rownames(countDFeByg) <- names(rowRanges(counteByg[[1]])); colnames(countDFeByg) <- names(bfl)
+rpkmDFeByg <- apply(countDFeByg, 2, function(x) returnRPKM(counts=x, ranges=eByg))
+write.table(countDFeByg, "results/countDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
+write.table(rpkmDFeByg, "results/rpkmDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
 {% endhighlight %}
 
-Add gene descriptions
-
+Sample of data slice of count table
 
 {% highlight r %}
-library("biomaRt")
-m <- useMart("plants_mart", dataset="athaliana_eg_gene", host="plants.ensembl.org")
-desc <- getBM(attributes=c("tair_locus", "description"), mart=m)
-desc <- desc[!duplicated(desc[,1]),]
-descv <- as.character(desc[,2]); names(descv) <- as.character(desc[,1])
-edgeDF <- data.frame(edgeDF, Desc=descv[rownames(edgeDF)], check.names=FALSE)
-write.table(edgeDF, "./results/edgeRglm_allcomp.xls", quote=FALSE, sep="\t", col.names = NA)
+read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE)[1:4,1:5]
 {% endhighlight %}
 
-## Plot DEG results
-
-Filter and plot DEG results for up and down regulated genes. The
-definition of *up* and *down* is given in the corresponding help
-file. To open it, type `?filterDEGs` in the R console.
+Sample of data slice of RPKM table
 
 
 {% highlight r %}
-edgeDF <- read.delim("results/edgeRglm_allcomp.xls", row.names=1, check.names=FALSE) 
-pdf("results/DEGcounts.pdf")
-DEG_list <- filterDEGs(degDF=edgeDF, filter=c(Fold=2, FDR=20))
+read.delim("results/rpkmDFeByg.xls", row.names=1, check.names=FALSE)[1:4,1:4]
+{% endhighlight %}
+
+Note, for most statistical differential expression or abundance analysis
+methods, such as `edgeR` or `DESeq2`, the raw count values should be used as input. The
+usage of RPKM values should be restricted to specialty applications
+required by some users, *e.g.* manually comparing the expression levels
+among different genes or features.
+
+## Sample-wise correlation analysis
+
+The following computes the sample-wise Spearman correlation coefficients from
+the `rlog` transformed expression values generated with the `DESeq2` package. After
+transformation to a distance matrix, hierarchical clustering is performed with
+the `hclust` function and the result is plotted as a dendrogram
+(also see file `sample_tree.pdf`).
+
+
+{% highlight r %}
+library(DESeq2, quietly=TRUE); library(ape,  warn.conflicts=FALSE)
+countDF <- as.matrix(read.table("./results/countDFeByg.xls"))
+colData <- data.frame(row.names=targetsin(args)$SampleName, condition=targetsin(args)$Factor)
+dds <- DESeqDataSetFromMatrix(countData = countDF, colData = colData, design = ~ condition)
+d <- cor(assay(rlog(dds)), method="spearman")
+hc <- hclust(dist(1-d))
+png("results/sample_tree.pdf")
+plot.phylo(as.phylo(hc), type="p", edge.col="blue", edge.width=2, show.node.label=TRUE, no.margin=TRUE)
 dev.off()
-write.table(DEG_list$Summary, "./results/DEGcounts.xls", quote=FALSE, sep="\t", row.names=FALSE)
 {% endhighlight %}
 
-![](../systemPipeRNAseq_files/DEGcounts.png)
-<div align="center">Figure 3: Up and down regulated DEGs with FDR of 1%</div>
-
-## Venn diagrams of DEG sets
-
-The `overLapper` function can compute Venn intersects for large numbers of sample
-sets (up to 20 or more) and plots 2-5 way Venn diagrams. A useful
-feature is the possiblity to combine the counts from several Venn
-comparisons with the same number of sample sets in a single Venn diagram
-(here for 4 up and down DEG sets).
-
-
-
-{% highlight r %}
-vennsetup <- overLapper(DEG_list$Up[6:9], type="vennsets")
-vennsetdown <- overLapper(DEG_list$Down[6:9], type="vennsets")
-pdf("results/vennplot.pdf")
-vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
-dev.off()
-{% endhighlight %}
-
-![](../systemPipeRNAseq_files/vennplot.png)
-<div align="center">Figure 4: Venn Diagram for 4 Up and Down DEG Sets</div>
+![](../systemPipeRNAseq_files/sample_tree.png)
+<div align="center">Figure 2: Correlation dendrogram of samples</div>
 

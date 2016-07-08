@@ -326,7 +326,7 @@
 
 
 {
-"title": "Read quantification per annotation range",
+"title": "Read distribution across genomic features",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/",
@@ -336,7 +336,7 @@
 
 
 {
-"title": "Analysis of differentially expressed genes with edgeR",
+"title": "Read quantification per annotation range",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/",
@@ -346,7 +346,7 @@
 
 
 {
-"title": "GO term enrichment analysis of DEGs",
+"title": "Analysis of differentially expressed genes with edgeR",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/",
@@ -356,7 +356,7 @@
 
 
 {
-"title": "Clustering and heat maps",
+"title": "GO term enrichment analysis of DEGs",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/",
@@ -366,7 +366,7 @@
 
 
 {
-"title": "Render report in HTML and PDF format",
+"title": "Clustering and heat maps",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/",
@@ -376,7 +376,7 @@
 
 
 {
-"title": "Funding",
+"title": "Render report in HTML and PDF format",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/",
@@ -386,10 +386,20 @@
 
 
 {
-"title": "References",
+"title": "Funding",
 "tags": "",
 "keywords": "",
 "url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/",
+"summary": ""
+},
+
+
+
+{
+"title": "References",
+"tags": "",
+"keywords": "",
+"url": "/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/",
 "summary": ""
 },
 

@@ -507,49 +507,56 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read quantification per annotation range</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_05/">5. Read distribution across genomic features</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Analysis of differentially expressed genes with edgeR</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_06/">6. Read quantification per annotation range</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. GO term enrichment analysis of DEGs</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_07/">7. Analysis of differentially expressed genes with edgeR</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. Clustering and heat maps</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_08/">8. GO term enrichment analysis of DEGs</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Render report in HTML and PDF format</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_09/">9. Clustering and heat maps</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Funding</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_10/">10. Render report in HTML and PDF format</a></li>
             
             
             
             
             
             
-            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. References</a></li>
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_11/">11. Funding</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CSHL_RNAseq/mydoc/mydoc_systemPipeRNAseq_12/">12. References</a></li>
             
             
             
@@ -665,9 +672,9 @@ and how many of them aligned to the reference.</p>
 genome browser such as IGV. The corresponding URLs are written to a file
 with a path specified under <code class="highlighter-rouge">urlfile</code> in the <code class="highlighter-rouge">results</code> directory.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">symLink2bam</span><span class="p">(</span><span class="n">sysargs</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">htmldir</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"~/.html/"</span><span class="p">,</span> <span class="s2">"somedir/"</span><span class="p">),</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">symLink2bam</span><span class="p">(</span><span class="n">sysargs</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">htmldir</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"~/.html/"</span><span class="p">,</span> <span class="s2">"projects/tests/"</span><span class="p">),</span> 
             <span class="n">urlbase</span><span class="o">=</span><span class="s2">"http://biocluster.ucr.edu/~tgirke/"</span><span class="p">,</span> 
-	        <span class="n">urlfile</span><span class="o">=</span><span class="s2">"./results/IGVurl.txt"</span><span class="p">)</span></code></pre></figure>
+            <span class="n">urlfile</span><span class="o">=</span><span class="s2">"./results/IGVurl.txt"</span><span class="p">)</span></code></pre></figure>
 
 
 
@@ -685,7 +692,7 @@ with a path specified under <code class="highlighter-rouge">urlfile</code> in th
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Mon Jul  4 15:49:28 2016<br/> Site last generated: Jul 7, 2016 <br />
+<p>Page last updated:</span> Thu Jul  7 18:05:45 2016<br/> Site last generated: Jul 7, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->
