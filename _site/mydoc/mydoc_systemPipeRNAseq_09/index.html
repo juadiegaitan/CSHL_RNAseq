@@ -627,7 +627,7 @@ measure and complete linkage for cluster joining.</p>
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
 <span class="n">geneids</span> <span class="o">&lt;-</span> <span class="n">unique</span><span class="p">(</span><span class="n">as.character</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">DEG_list</span><span class="p">[[</span><span class="m">1</span><span class="p">]])))</span>
 <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">assay</span><span class="p">(</span><span class="n">rlog</span><span class="p">(</span><span class="n">dds</span><span class="p">))[</span><span class="n">geneids</span><span class="p">,</span> <span class="p">]</span>
-<span class="n">png</span><span class="p">(</span><span class="s2">"heatmap1.png"</span><span class="p">)</span>
+<span class="n">png</span><span class="p">(</span><span class="s2">"results/heatmap1.png"</span><span class="p">)</span>
 <span class="n">pheatmap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">"row"</span><span class="p">,</span> <span class="n">clustering_distance_rows</span><span class="o">=</span><span class="s2">"correlation"</span><span class="p">,</span> <span class="n">clustering_distance_cols</span><span class="o">=</span><span class="s2">"correlation"</span><span class="p">)</span>
 <span class="n">dev.off</span><span class="p">()</span></code></pre></figure>
 
@@ -650,7 +650,7 @@ measure and complete linkage for cluster joining.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Thu Jul  7 18:05:45 2016<br/> Site last generated: Jul 7, 2016 <br />
+<p>Page last updated:</span> Fri Jul  8 08:26:15 2016<br/> Site last generated: Jul 8, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

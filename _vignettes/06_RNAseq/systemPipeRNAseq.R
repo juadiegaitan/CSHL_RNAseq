@@ -193,7 +193,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 ## library(pheatmap)
 ## geneids <- unique(as.character(unlist(DEG_list[[1]])))
 ## y <- assay(rlog(dds))[geneids, ]
-## png("heatmap1.png")
+## png("results/heatmap1.png")
 ## pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
 ## dev.off()
 
