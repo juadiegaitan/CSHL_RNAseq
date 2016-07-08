@@ -632,8 +632,8 @@ $('#toc').on('click', 'a', function() {
 <p>The following generates a fully populated <em><code class="highlighter-rouge">systemPipeR</code></em> workflow environment (here for RNA-Seq) in the current working directory of an R session. At this time the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq. Templates for additional NGS applications will be provided in the future.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
-<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"riboseq"</span><span class="p">,</span> <span class="n">bam</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"riboseq"</span><span class="p">)</span></code></pre></figure>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">,</span> <span class="n">bam</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span></code></pre></figure>
 
 <p>The working environment of the sample data loaded in the previous step contains the following preconfigured directory structure. Directory names are indicated in  <span style="color:grey"><em><strong>grey</strong></em></span>. Users can change this structure as needed, but need to adjust the code in their workflows accordingly.</p>
 
@@ -827,7 +827,7 @@ ones.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Mon Jul  4 15:48:24 2016<br/> Site last generated: Jul 4, 2016 <br />
+<p>Page last updated:</span> Thu Jul  7 17:21:50 2016<br/> Site last generated: Jul 7, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

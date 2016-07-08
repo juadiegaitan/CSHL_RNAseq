@@ -21,7 +21,7 @@ bibliography: bibtex.bib
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeR.Rmd', clean=F)"; R CMD Stangle systemPipeR.Rmd; Rscript ../md2jekyll.R systemPipeR.knit.md 4
+Rscript -e "rmarkdown::render('systemPipeR.Rmd', clean=F)"; R CMD Stangle systemPipeR.Rmd; Rscript ../md2jekyll.R systemPipeR.knit.md 5
 
 -->
 
@@ -90,8 +90,8 @@ The mini sample FASTQ files used by this overview vignette as well as the associ
 The following generates a fully populated _`systemPipeR`_ workflow environment (here for RNA-Seq) in the current working directory of an R session. At this time the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq. Templates for additional NGS applications will be provided in the future.
 ```{r genRna_workflow, eval=FALSE}
 library(systemPipeRdata)
-genWorkenvir(workflow="riboseq", bam=TRUE)
-setwd("riboseq")
+genWorkenvir(workflow="rnaseq", bam=TRUE)
+setwd("rnaseq")
 ```
 
 The working environment of the sample data loaded in the previous step contains the following preconfigured directory structure. Directory names are indicated in  <span style="color:grey">_**grey**_</span>. Users can change this structure as needed, but need to adjust the code in their workflows accordingly. 

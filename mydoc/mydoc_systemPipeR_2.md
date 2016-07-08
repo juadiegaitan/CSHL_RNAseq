@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 keywords: 
-last_updated: Mon Jul  4 15:48:24 2016
+last_updated: Thu Jul  7 17:21:50 2016
 ---
 
 ## Installation
@@ -32,8 +32,8 @@ The following generates a fully populated _`systemPipeR`_ workflow environment (
 
 {% highlight r %}
 library(systemPipeRdata)
-genWorkenvir(workflow="riboseq", bam=TRUE)
-setwd("riboseq")
+genWorkenvir(workflow="rnaseq", bam=TRUE)
+setwd("rnaseq")
 {% endhighlight %}
 
 The working environment of the sample data loaded in the previous step contains the following preconfigured directory structure. Directory names are indicated in  <span style="color:grey">_**grey**_</span>. Users can change this structure as needed, but need to adjust the code in their workflows accordingly. 

@@ -1,7 +1,7 @@
 ---
 title: "NGS Workflow Overview" 
 author: "Author: Thomas Girke (thomas.girke@ucr.edu)"
-date: "Last update: 04 July, 2016" 
+date: "Last update: 07 July, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -98,8 +98,8 @@ The following generates a fully populated _`systemPipeR`_ workflow environment (
 
 ```r
 library(systemPipeRdata)
-genWorkenvir(workflow="riboseq", bam=TRUE)
-setwd("riboseq")
+genWorkenvir(workflow="rnaseq", bam=TRUE)
+setwd("rnaseq")
 ```
 
 The working environment of the sample data loaded in the previous step contains the following preconfigured directory structure. Directory names are indicated in  <span style="color:grey">_**grey**_</span>. Users can change this structure as needed, but need to adjust the code in their workflows accordingly. 

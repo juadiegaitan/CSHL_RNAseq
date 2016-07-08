@@ -18,8 +18,8 @@ knitr::opts_chunk$set(
 
 ## ----genRna_workflow, eval=FALSE-----------------------------------------
 ## library(systemPipeRdata)
-## genWorkenvir(workflow="riboseq", bam=TRUE)
-## setwd("riboseq")
+## genWorkenvir(workflow="rnaseq", bam=TRUE)
+## setwd("rnaseq")
 
 ## ----targetsSE, eval=TRUE------------------------------------------------
 library(systemPipeR)
