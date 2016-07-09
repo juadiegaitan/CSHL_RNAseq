@@ -1,7 +1,7 @@
 ---
 title: Sample definitions and environment settings
 keywords: 
-last_updated: Fri Jul  8 12:02:11 2016
+last_updated: Sat Jul  9 08:56:05 2016
 ---
 
 ## Environment settings and input data
@@ -52,6 +52,15 @@ download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vi
 
 Now open the R markdown script `systemPipeRNAseq.Rmd`in your R IDE (_e.g._ vim-r or RStudio) and 
 run the workflow as outlined below. 
+
+If you are on Windows please run the following command to move all input files into the right location. This problem will be fixed next week.
+
+
+{% highlight r %}
+file.copy(list.files("data/fastq/", "*", full.names=TRUE), "data")
+file.copy(list.files("data/annotation/", "*", full.names=TRUE), "data", recursive=TRUE)
+file.copy(list.files("results/bam/", "*", full.names=TRUE), "results")
+{% endhighlight %}
 
 ## Required packages and resources
 

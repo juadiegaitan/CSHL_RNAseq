@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="header">
 <h1 class="title">RNA-Seq Workflow</h1>
 <h4 class="author"><em>First/last name (<a href="mailto:first.last@ucr.edu">first.last@ucr.edu</a>)</em></h4>
-<h4 class="date"><em>Last update: 08 July, 2016</em></h4>
+<h4 class="date"><em>Last update: 09 July, 2016</em></h4>
 </div>
 
 <h1>Contents</h1>
@@ -156,6 +156,10 @@ setwd(&quot;rnaseq&quot;)</code></pre>
 <p>In case there is an updated version of this tutorial, download its <code>systemPipeRNAseq.Rmd</code> source.</p>
 <pre class="r"><code>download.file(&quot;https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/06_RNAseq/systemPipeRNAseq.Rmd&quot;, &quot;systemPipeRNAseq.Rmd&quot;)</code></pre>
 <p>Now open the R markdown script <code>systemPipeRNAseq.Rmd</code>in your R IDE (<em>e.g.</em> vim-r or RStudio) and run the workflow as outlined below.</p>
+<p>If you are on Windows please run the following command to move all input files into the right location. This problem will be fixed next week.</p>
+<pre class="r"><code>file.copy(list.files(&quot;data/fastq/&quot;, &quot;*&quot;, full.names=TRUE), &quot;data&quot;)
+file.copy(list.files(&quot;data/annotation/&quot;, &quot;*&quot;, full.names=TRUE), &quot;data&quot;, recursive=TRUE)
+file.copy(list.files(&quot;results/bam/&quot;, &quot;*&quot;, full.names=TRUE), &quot;results&quot;)</code></pre>
 </div>
 <div id="required-packages-and-resources" class="section level2">
 <h2><span class="header-section-number">2.3</span> Required packages and resources</h2>
@@ -485,7 +489,7 @@ Figure 6: Heat Map with Hierarchical Clustering Dendrograms of DEGs
 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] stats4    parallel  methods   stats     graphics  utils     datasets  grDevices base     
+## [1] parallel  stats4    methods   stats     graphics  utils     datasets  grDevices base     
 ## 
 ## other attached packages:
 ##  [1] systemPipeR_1.6.2          ShortRead_1.30.0           GenomicAlignments_1.8.3   

@@ -668,6 +668,12 @@ additional NGS applications will be provided in the future.</p>
 <p>Now open the R markdown script <code class="highlighter-rouge">systemPipeRNAseq.Rmd</code>in your R IDE (<em>e.g.</em> vim-r or RStudio) and 
 run the workflow as outlined below.</p>
 
+<p>If you are on Windows please run the following command to move all input files into the right location. This problem will be fixed next week.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">file.copy</span><span class="p">(</span><span class="n">list.files</span><span class="p">(</span><span class="s2">"data/fastq/"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="n">full.names</span><span class="o">=</span><span class="n">TRUE</span><span class="p">),</span> <span class="s2">"data"</span><span class="p">)</span>
+<span class="n">file.copy</span><span class="p">(</span><span class="n">list.files</span><span class="p">(</span><span class="s2">"data/annotation/"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="n">full.names</span><span class="o">=</span><span class="n">TRUE</span><span class="p">),</span> <span class="s2">"data"</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">file.copy</span><span class="p">(</span><span class="n">list.files</span><span class="p">(</span><span class="s2">"results/bam/"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="n">full.names</span><span class="o">=</span><span class="n">TRUE</span><span class="p">),</span> <span class="s2">"results"</span><span class="p">)</span></code></pre></figure>
+
 <h2 id="required-packages-and-resources">Required packages and resources</h2>
 
 <p>The <code class="highlighter-rouge">systemPipeR</code> package needs to be loaded to perform the analysis steps shown in
@@ -738,7 +744,7 @@ comparisons of the analysis workflow.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Fri Jul  8 12:02:11 2016<br/> Site last generated: Jul 8, 2016 <br />
+<p>Page last updated:</span> Sat Jul  9 08:56:05 2016<br/> Site last generated: Jul 9, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

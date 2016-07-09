@@ -14,6 +14,11 @@ knitr::opts_chunk$set(
 ## ----download_latest, eval=FALSE-----------------------------------------
 ## download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/06_RNAseq/systemPipeRNAseq.Rmd", "systemPipeRNAseq.Rmd")
 
+## ----windows_fix, eval=FALSE---------------------------------------------
+## file.copy(list.files("data/fastq/", "*", full.names=TRUE), "data")
+## file.copy(list.files("data/annotation/", "*", full.names=TRUE), "data", recursive=TRUE)
+## file.copy(list.files("results/bam/", "*", full.names=TRUE), "results")
+
 ## ----load_systempiper, eval=TRUE-----------------------------------------
 library(systemPipeR)
 

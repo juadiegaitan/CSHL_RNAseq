@@ -1,7 +1,7 @@
 ---
 title: RNA-Seq Workflow 
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 08 July, 2016" 
+date: "Last update: 09 July, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -106,6 +106,15 @@ download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vi
 
 Now open the R markdown script `systemPipeRNAseq.Rmd`in your R IDE (_e.g._ vim-r or RStudio) and 
 run the workflow as outlined below. 
+
+If you are on Windows please run the following command to move all input files into the right location. This problem will be fixed next week.
+
+
+```r
+file.copy(list.files("data/fastq/", "*", full.names=TRUE), "data")
+file.copy(list.files("data/annotation/", "*", full.names=TRUE), "data", recursive=TRUE)
+file.copy(list.files("results/bam/", "*", full.names=TRUE), "results")
+```
 
 ## Required packages and resources
 
@@ -641,7 +650,7 @@ sessionInfo()
 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] stats4    parallel  methods   stats     graphics  utils     datasets  grDevices base     
+## [1] parallel  stats4    methods   stats     graphics  utils     datasets  grDevices base     
 ## 
 ## other attached packages:
 ##  [1] systemPipeR_1.6.2          ShortRead_1.30.0           GenomicAlignments_1.8.3   

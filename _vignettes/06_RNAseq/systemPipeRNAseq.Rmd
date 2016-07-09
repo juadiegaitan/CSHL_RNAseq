@@ -100,6 +100,14 @@ download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vi
 Now open the R markdown script `systemPipeRNAseq.Rmd`in your R IDE (_e.g._ vim-r or RStudio) and 
 run the workflow as outlined below. 
 
+If you are on Windows please run the following command to move all input files into the right location. This problem will be fixed next week.
+
+```{r windows_fix, eval=FALSE}
+file.copy(list.files("data/fastq/", "*", full.names=TRUE), "data")
+file.copy(list.files("data/annotation/", "*", full.names=TRUE), "data", recursive=TRUE)
+file.copy(list.files("results/bam/", "*", full.names=TRUE), "results")
+```
+
 ## Required packages and resources
 
 The `systemPipeR` package needs to be loaded to perform the analysis steps shown in

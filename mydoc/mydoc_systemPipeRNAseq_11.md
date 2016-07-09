@@ -1,7 +1,7 @@
 ---
 title: Version Information
 keywords: 
-last_updated: Fri Jul  8 12:02:11 2016
+last_updated: Sat Jul  9 08:56:05 2016
 ---
 
 
@@ -21,7 +21,7 @@ sessionInfo()
 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] stats4    parallel  methods   stats     graphics  utils     datasets  grDevices base     
+## [1] parallel  stats4    methods   stats     graphics  utils     datasets  grDevices base     
 ## 
 ## other attached packages:
 ##  [1] systemPipeR_1.6.2          ShortRead_1.30.0           GenomicAlignments_1.8.3   

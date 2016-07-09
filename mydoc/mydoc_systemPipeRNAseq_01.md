@@ -1,11 +1,11 @@
 ---
 title: RNA-Seq Workflow 
 keywords: 
-last_updated: Fri Jul  8 12:02:11 2016
+last_updated: Sat Jul  9 08:56:05 2016
 ---
 First/last name (first.last@ucr.edu)
 
-Last update: 08 July, 2016 
+Last update: 09 July, 2016 
 
 Alternative formats of this tutorial:
 [`HTML`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/06_RNAseq/systemPipeRNAseq.html),
