@@ -262,7 +262,8 @@ runCommandline(args=args)</code></pre>
 <div id="read-and-alignment-stats" class="section level2">
 <h2><span class="header-section-number">4.4</span> Read and alignment stats</h2>
 <p>The following provides an overview of the number of reads in each sample and how many of them aligned to the reference.</p>
-<pre class="r"><code>read_statsDF &lt;- alignStats(args=args) 
+<pre class="r"><code>args &lt;- systemArgs(sysma=&quot;param/hisat2.param&quot;, mytargets=&quot;targets.txt&quot;)
+read_statsDF &lt;- alignStats(args=args) 
 write.table(read_statsDF, &quot;results/alignStats.xls&quot;, row.names=FALSE, quote=FALSE, sep=&quot;\t&quot;)</code></pre>
 <pre class="r"><code>read.table(system.file(&quot;extdata&quot;, &quot;alignStats.xls&quot;, package=&quot;systemPipeR&quot;), header=TRUE)[1:4,]</code></pre>
 <pre><code>##   FileName Nreads2x Nalign Perc_Aligned Nalign_Primary Perc_Aligned_Primary

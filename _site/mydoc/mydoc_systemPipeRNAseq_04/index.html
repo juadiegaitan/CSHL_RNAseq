@@ -674,7 +674,8 @@ aligner <code class="highlighter-rouge">Rsubread</code> or other R-based functio
 <p>The following provides an overview of the number of reads in each sample
 and how many of them aligned to the reference.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">read_statsDF</span> <span class="o">&lt;-</span> <span class="n">alignStats</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/hisat2.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">read_statsDF</span> <span class="o">&lt;-</span> <span class="n">alignStats</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> 
 <span class="n">write.table</span><span class="p">(</span><span class="n">read_statsDF</span><span class="p">,</span> <span class="s2">"results/alignStats.xls"</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">read.table</span><span class="p">(</span><span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"alignStats.xls"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></figure>
@@ -711,7 +712,7 @@ with a path specified under <code class="highlighter-rouge">urlfile</code> in th
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Jul  9 08:56:05 2016<br/> Site last generated: Jul 9, 2016 <br />
+<p>Page last updated:</span> Sat Jul  9 09:06:03 2016<br/> Site last generated: Jul 9, 2016 <br />
 <!--
 <p><img src="/CSHL_RNAseq/images/company_logo.png" alt="Company logo"/></p>
 -->

@@ -76,6 +76,7 @@ targets
 ## file.exists(outpaths(args))
 
 ## ----align_stats, eval=FALSE---------------------------------------------
+## args <- systemArgs(sysma="param/hisat2.param", mytargets="targets.txt")
 ## read_statsDF <- alignStats(args=args)
 ## write.table(read_statsDF, "results/alignStats.xls", row.names=FALSE, quote=FALSE, sep="\t")
 

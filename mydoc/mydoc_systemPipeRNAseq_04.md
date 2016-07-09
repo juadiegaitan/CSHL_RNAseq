@@ -1,7 +1,7 @@
 ---
 title: Alignments
 keywords: 
-last_updated: Sat Jul  9 08:56:05 2016
+last_updated: Sat Jul  9 09:06:03 2016
 ---
 
 ## Read mapping with `Bowtie2/Tophat2`
@@ -69,6 +69,7 @@ and how many of them aligned to the reference.
 
 
 {% highlight r %}
+args <- systemArgs(sysma="param/hisat2.param", mytargets="targets.txt")
 read_statsDF <- alignStats(args=args) 
 write.table(read_statsDF, "results/alignStats.xls", row.names=FALSE, quote=FALSE, sep="\t")
 {% endhighlight %}
