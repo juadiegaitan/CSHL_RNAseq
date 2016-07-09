@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 keywords: 
-last_updated: Thu Jul  7 17:21:50 2016
+last_updated: Sat Jul  9 09:20:33 2016
 ---
 
 ## Installation
@@ -34,6 +34,27 @@ The following generates a fully populated _`systemPipeR`_ workflow environment (
 library(systemPipeRdata)
 genWorkenvir(workflow="rnaseq", bam=TRUE)
 setwd("rnaseq")
+{% endhighlight %}
+
+## Download latest version of this tutorial
+
+In case there is an updated version of this tutorial, download its `systemPipeRNAseq.Rmd` source.
+
+
+{% highlight r %}
+download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/05_Rworkflows/systemPipeR.Rmd", "systemPipeR.Rmd")
+{% endhighlight %}
+
+Now open the R markdown script `systemPipeRNAseq.Rmd`in your R IDE (_e.g._ vim-r or RStudio) and 
+run the workflow as outlined below. 
+
+If you are on Windows please run the following command to move all input files into the right location. This problem will be fixed next week.
+
+
+{% highlight r %}
+file.copy(list.files("data/fastq/", "*", full.names=TRUE), "data")
+file.copy(list.files("data/annotation/", "*", full.names=TRUE), "data", recursive=TRUE)
+file.copy(list.files("results/bam/", "*", full.names=TRUE), "results")
 {% endhighlight %}
 
 The working environment of the sample data loaded in the previous step contains the following preconfigured directory structure. Directory names are indicated in  <span style="color:grey">_**grey**_</span>. Users can change this structure as needed, but need to adjust the code in their workflows accordingly. 

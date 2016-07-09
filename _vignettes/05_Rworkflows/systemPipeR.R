@@ -21,6 +21,14 @@ knitr::opts_chunk$set(
 ## genWorkenvir(workflow="rnaseq", bam=TRUE)
 ## setwd("rnaseq")
 
+## ----download_latest, eval=FALSE-----------------------------------------
+## download.file("https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/05_Rworkflows/systemPipeR.Rmd", "systemPipeR.Rmd")
+
+## ----windows_fix, eval=FALSE---------------------------------------------
+## file.copy(list.files("data/fastq/", "*", full.names=TRUE), "data")
+## file.copy(list.files("data/annotation/", "*", full.names=TRUE), "data", recursive=TRUE)
+## file.copy(list.files("results/bam/", "*", full.names=TRUE), "results")
+
 ## ----targetsSE, eval=TRUE------------------------------------------------
 library(systemPipeR)
 targetspath <- system.file("extdata", "targets.txt", package="systemPipeR") 

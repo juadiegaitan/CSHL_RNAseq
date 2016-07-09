@@ -591,68 +591,33 @@ p2_landing_page:
 
 
 
-mydoc_systemPipeRNAseq_01:
-  title: "Introduction"
-  url: "../mydoc/mydoc_systemPipeRNAseq_01.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_01.html'>Introduction</a>"
+mydoc_systemPipeR_1:
+  title: "Background"
+  url: "../mydoc/mydoc_systemPipeR_1.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_1.html'>Background</a>"
 
-mydoc_systemPipeRNAseq_02:
-  title: "Sample definitions and environment settings"
-  url: "../mydoc/mydoc_systemPipeRNAseq_02.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_02.html'>Sample definitions and environment settings</a>"
+mydoc_systemPipeR_2:
+  title: "Getting Started"
+  url: "../mydoc/mydoc_systemPipeR_2.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_2.html'>Getting Started</a>"
 
-mydoc_systemPipeRNAseq_03:
-  title: "Read preprocessing"
-  url: "../mydoc/mydoc_systemPipeRNAseq_03.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_03.html'>Read preprocessing</a>"
+mydoc_systemPipeR_3:
+  title: "More detail"
+  url: "../mydoc/mydoc_systemPipeR_3.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_3.html'>More detail</a>"
 
-mydoc_systemPipeRNAseq_04:
-  title: "Alignments"
-  url: "../mydoc/mydoc_systemPipeRNAseq_04.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_04.html'>Alignments</a>"
+mydoc_systemPipeR_4:
+  title: "Workflow demo"
+  url: "../mydoc/mydoc_systemPipeR_4.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_4.html'>Workflow demo</a>"
 
-mydoc_systemPipeRNAseq_05:
-  title: "Read distribution across genomic features"
-  url: "../mydoc/mydoc_systemPipeRNAseq_05.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_05.html'>Read distribution across genomic features</a>"
+mydoc_systemPipeR_5:
+  title: "Version information"
+  url: "../mydoc/mydoc_systemPipeR_5.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_5.html'>Version information</a>"
 
-mydoc_systemPipeRNAseq_06:
-  title: "Read quantification per annotation range"
-  url: "../mydoc/mydoc_systemPipeRNAseq_06.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_06.html'>Read quantification per annotation range</a>"
-
-mydoc_systemPipeRNAseq_07:
-  title: "Analysis of differentially expressed genes with edgeR "
-  url: "../mydoc/mydoc_systemPipeRNAseq_07.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_07.html'>Analysis of differentially expressed genes with edgeR </a>"
-
-mydoc_systemPipeRNAseq_08:
-  title: "GO term enrichment analysis of DEGs"
-  url: "../mydoc/mydoc_systemPipeRNAseq_08.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_08.html'>GO term enrichment analysis of DEGs</a>"
-
-mydoc_systemPipeRNAseq_09:
-  title: "Clustering and heat maps"
-  url: "../mydoc/mydoc_systemPipeRNAseq_09.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_09.html'>Clustering and heat maps</a>"
-
-mydoc_systemPipeRNAseq_10:
-  title: "Render report in HTML and PDF format"
-  url: "../mydoc/mydoc_systemPipeRNAseq_10.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_10.html'>Render report in HTML and PDF format</a>"
-
-mydoc_systemPipeRNAseq_11:
-  title: "Version Information"
-  url: "../mydoc/mydoc_systemPipeRNAseq_11.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_11.html'>Version Information</a>"
-
-mydoc_systemPipeRNAseq_12:
-  title: "Funding"
-  url: "../mydoc/mydoc_systemPipeRNAseq_12.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_12.html'>Funding</a>"
-
-mydoc_systemPipeRNAseq_13:
+mydoc_systemPipeR_6:
   title: "References"
-  url: "../mydoc/mydoc_systemPipeRNAseq_13.html"
-  link: "<a href='../mydoc/mydoc_systemPipeRNAseq_13.html'>References</a>"
+  url: "../mydoc/mydoc_systemPipeR_6.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_6.html'>References</a>"
 

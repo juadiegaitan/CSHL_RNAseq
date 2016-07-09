@@ -1,11 +1,11 @@
 ---
 title: NGS Workflow Overview 
 keywords: 
-last_updated: Thu Jul  7 17:21:50 2016
+last_updated: Sat Jul  9 09:20:33 2016
 ---
 Author: Thomas Girke (thomas.girke@ucr.edu)
 
-Last update: 07 July, 2016 
+Last update: 09 July, 2016 
 
 Alternative formats of this tutorial:
 [`HTML`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/tgirke/CSHL_RNAseq/gh-pages/_vignettes/05_Rworkflows/systemPipeR.html),
